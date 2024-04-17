@@ -1,0 +1,46 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    ".mypy_cache": true,
+    ".pytest_cache": true,
+    ".ruff_cache": true,
+    "**/__pycache__": true,
+    ".idea": true
+  },
+  "cSpell.words": ["dotenv", "loguru", "Twikit"],
+  // Python
+
+  // Disable flake8 and pylint in favor of ruff
+  "flake8.ignorePatterns": ["**/**"],
+  "pylint.ignorePatterns": ["**/**"],
+
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python.analysis.extraPaths": ["${workspaceFolder}/src"],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "ruff.enable": true,
+  "ruff.lint.run": "onSave",
+  "ruff.lint.args": ["--config=pyproject.toml"],
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.fixAll": true, //lint and fix all files in workspace
+  "ruff.organizeImports": true, //organize imports on save
+  "ruff.codeAction.disableRuleComment": {
+    "enable": true
+  },
+  "ruff.codeAction.fixViolation": {
+    "enable": true
+  },
+
+  "python.testing.pytestArgs": ["tests", "-vvv"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
