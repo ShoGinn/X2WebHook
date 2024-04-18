@@ -1053,13 +1053,13 @@ files = [
 
 [[package]]
 name = "twikit"
-version = "1.5.1"
+version = "1.5.3"
 description = "Twitter API wrapper for python with **no API key required**."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "twikit-1.5.1-py3-none-any.whl", hash = "sha256:152ebe61fcb3e913e91f7a38ea9dd4c8f33899b1a3e97d90a69fec108bae1906"},
-    {file = "twikit-1.5.1.tar.gz", hash = "sha256:525eda72fd0cef13877df215c255a41cbe1a0874ed52b3418f954275d85632e3"},
+    {file = "twikit-1.5.3-py3-none-any.whl", hash = "sha256:1c72febe4d7fe5249dff0bb38c80a67423bea739fbf7c42d0cd6064d7b30aded"},
+    {file = "twikit-1.5.3.tar.gz", hash = "sha256:f35a3ae9a6285907bfae38b17e878e1c70147aedeb997a4683f8783db4a65c13"},
 ]
 
 [package.dependencies]
