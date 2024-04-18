@@ -21,6 +21,9 @@ jobs:
       - name: Set up Poetry
         uses: ./.github/actions/setup-poetry
 
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
       - name: pytest
         shell: bash
         if: ${{ !(matrix.python == '3.12' && matrix.os == 'ubuntu-latest') }}
