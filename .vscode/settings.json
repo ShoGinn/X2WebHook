@@ -16,11 +16,15 @@
   },
   "cSpell.words": [
     "doseq",
+    "ensurepath",
     "loguru",
+    "mypy",
+    "pipx",
     "Pydantic",
     "pymongo",
     "setenv",
-    "Twikit"
+    "Twikit",
+    "venv"
   ],
   "cSpell.diagnosticLevel": "Warning",
   // Python

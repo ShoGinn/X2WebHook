@@ -25,6 +25,7 @@ pytest-mock = "^3.14.0"
 responses = "^0.25.0"
 ruff = "^0.3.7"
 types-requests = "^2.31.0.20240406"
+python-semantic-release = "^9.4.2"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
@@ -39,7 +40,7 @@ disallow_any_generics = false
 disallow_incomplete_defs = true
 disallow_untyped_decorators = true
 disallow_untyped_defs = true
-files = ["tests", "src"]
+files = ["src", "tests"]
 ignore_missing_imports = false
 implicit_reexport = false
 no_implicit_optional = true
@@ -179,6 +180,17 @@ exclude_also = [
 ]
 fail_under = 90
 show_missing = true
+
+[tool.semantic_release]
+branch = "main"
+build_command = "poetry build --format wheel"
+commit_message = "{version}\n\nskip-checks: true"
+major_on_zero = true
+remove_dist = false
+tag_commit = true
+upload_to_repository = false
+version_source = "tag"
+version_toml = ["pyproject.toml:tool.poetry.version"]
 
 [tool.poe.tasks.lint]
 cmd = "pre-commit run --all-files"
