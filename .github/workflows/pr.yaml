@@ -1,0 +1,17 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pr-check:
+    name: Check Python
+    uses: ./.github/workflows/check-python.yaml
+
+  pr-build:
+    name: Build & Test Python
+    needs: pr-check
+    uses: ./.github/workflows/build-python.yaml

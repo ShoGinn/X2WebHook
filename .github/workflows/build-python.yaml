@@ -1,0 +1,62 @@
+name: Build, Test and Publish Python
+
+on: [workflow_call]
+
+jobs:
+  build-python:
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+        python: ["3.10", "3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Set up Poetry
+        uses: ./.github/actions/setup-poetry
+
+      - name: pytest
+        shell: bash
+        if: ${{ !(matrix.python == '3.12' && matrix.os == 'ubuntu-latest') }}
+        # git config is needed due to several tests relying on e2e copier invocation and copier relies on git during `copy` command
+        run: |
+          set -o pipefail
+          git config --global user.email "actions@github.com" && git config --global user.name "github-actions"
+          poetry run pytest -n auto
+        id: pytest
+
+      - name: pytest + coverage
+        shell: bash
+        if: matrix.python == '3.12' && matrix.os == 'ubuntu-latest'
+        env:
+          COVERAGE_CORE: sysmon
+        # git config is needed due to several tests relying on e2e copier invocation and copier relies on git during `copy` command
+        run: |
+          set -o pipefail
+          git config --global user.email "actions@github.com" && git config --global user.name "github-actions"
+          poetry run pytest -n auto --junitxml=pytest-junit.xml --cov-report=term-missing:skip-covered --cov=src | tee pytest-coverage.txt
+        id: pytest-cov
+
+      - name: Upload received snapshots (in case of failure)
+        if: failure() && (steps.pytest.outcome == 'failure' || steps.pytest-cov.outcome == 'failure')
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifacts-${{ matrix.os }}-python${{ matrix.python }}
+          path: tests/**/*.received.txt
+
+      - name: pytest coverage comment - using Python 3.12 on ubuntu-latest
+        if: matrix.python == '3.12' && matrix.os == 'ubuntu-latest'
+        continue-on-error: true # forks fail to add a comment, so continue any way
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest-junit.xml
+
+      - name: Build Wheel
+        run: poetry build --format wheel
