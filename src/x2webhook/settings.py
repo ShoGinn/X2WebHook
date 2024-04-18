@@ -1,5 +1,6 @@
 """This module contains the settings for the application."""
 
+import os
 from enum import Enum
 
 from pydantic import Field, SecretStr
@@ -53,7 +54,7 @@ class LogLevel(str, Enum):
 class Settings(BaseSettings):
     """Represents the settings for the x2webhook application."""
 
-    model_config = SettingsConfigDict(env_prefix="x2webhook_", env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_prefix="x2webhook_")
     app_env: AppEnv = AppEnv.local
     log_level: LogLevel = LogLevel.debug
 
@@ -75,4 +76,6 @@ def get_config() -> Settings:
     Returns:
         Settings: An instance of the Settings class representing the configuration.
     """
-    return Settings()
+    env_file = None if "PYTEST_CURRENT_TEST" in os.environ else ".env"
+    env_file_encoding = None if "PYTEST_CURRENT_TEST" in os.environ else "utf-8"
+    return Settings(_env_file=env_file, _env_file_encoding=env_file_encoding)  # type: ignore[call-arg]

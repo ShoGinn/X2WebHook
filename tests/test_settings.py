@@ -3,13 +3,6 @@ from pydantic import SecretStr
 from x2webhook.settings import AppEnv, LogLevel, Settings, get_config
 
 
-# Define a fixture for environment setup if needed
-@pytest.fixture()
-def _load_env(monkeypatch: pytest.MonkeyPatch) -> None:
-    # Example of setting environment variables if needed for tests
-    monkeypatch.setenv("X2WEBHOOK_X_USERNAME", "test_user")
-
-
 # Happy path tests
 @pytest.mark.parametrize(
     (
@@ -40,7 +33,7 @@ def _load_env(monkeypatch: pytest.MonkeyPatch) -> None:
             "pass2",
             "email2@test.com",
             600,
-            "mongodb://remotehost:27017",
+            "mongodb://remote_host:27017",
             "happy_path_production",
         ),
         # Add more test cases as needed
@@ -110,3 +103,16 @@ def test_get_config(test_id: str) -> None:
     # Here you might also assert on default values or states of the Settings instance,
     # assuming there are any that can be checked. This would depend on the
     # implementation details of the Settings class.
+
+
+def test_get_config_with_loaded_env(monkeypatch: pytest.MonkeyPatch) -> None:
+    # Arrange
+    # (In this case, there's nothing to arrange since the function takes no parameters
+    # and has no setup.)
+    monkeypatch.setenv("X2WEBHOOK_X_USERNAME", "test_user")
+    # Act
+    result = get_config()
+
+    # Assert
+    assert isinstance(result, Settings), "get_config should return an instance of Settings"
+    assert result.x_username == "test_user", "get_config should load environment variables into the Settings instance"

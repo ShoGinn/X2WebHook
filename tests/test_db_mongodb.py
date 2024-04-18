@@ -30,7 +30,7 @@ def mock_mongo_client(monkeypatch: pytest.MonkeyPatch) -> mock.MagicMock:
         # Test ID: 1 - Happy path for adding a user
         (
             "mongodb://localhost:27017",
-            "testdb",
+            "test_db",
             {
                 "account_to_check": "John Doe",
                 "posting_text": "Hello, World!",
@@ -89,12 +89,12 @@ def test_mongodb_get_users_validation_error(mock_mongo_client: mock.MagicMock, m
     # Arrange
     client = MongoDBClient(
         "mongodb://localhost:27017",
-        "testdb",
+        "test_db",
         users_collection="users",
         cookies_collection="cookies",
         mongo_client=mock_mongo_client,
     )
-    mock_mongo_client["testdb"]["users_collection"].find.return_value = [{}]
+    mock_mongo_client["test_db"]["users_collection"].find.return_value = [{}]
     # Act
     users = client.get_users()
 

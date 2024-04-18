@@ -145,12 +145,12 @@ def test_create_default_users_with_failure(mock_mongo_client: mock.MagicMock) ->
     # Arrange
     mongodb_client = MongoDBClient(
         "mongodb://localhost:27017",
-        "testdb",
+        "test_db",
         users_collection="users",
         cookies_collection="cookies",
         mongo_client=mock_mongo_client,
     )
-    mock_mongo_client["testdb"]["users_collection"].find.return_value = [{}]
+    mock_mongo_client["test_db"]["users_collection"].find.return_value = [{}]
     users = create_default_users(mongodb_client)
     assert len(users) == 0
 

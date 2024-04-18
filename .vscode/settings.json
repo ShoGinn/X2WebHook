@@ -14,13 +14,22 @@
     "**/__pycache__": true,
     ".idea": true
   },
-  "cSpell.words": ["dotenv", "loguru", "Twikit"],
+  "cSpell.words": [
+    "doseq",
+    "loguru",
+    "Pydantic",
+    "pymongo",
+    "setenv",
+    "Twikit"
+  ],
+  "cSpell.diagnosticLevel": "Warning",
   // Python
 
   // Disable flake8 and pylint in favor of ruff
   "flake8.ignorePatterns": ["**/**"],
   "pylint.ignorePatterns": ["**/**"],
 
+  "python.envFile": "",
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
   "python.analysis.extraPaths": ["${workspaceFolder}/src"],
   "[python]": {
