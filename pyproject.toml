@@ -27,6 +27,7 @@ python-semantic-release = "^9.4.2"
 responses = "^0.25.0"
 ruff = "<1.0.0"
 types-requests = "^2.31.0.20240406"
+pytest-xdist = "^3.5.0"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
