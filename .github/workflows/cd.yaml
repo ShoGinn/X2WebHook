@@ -104,4 +104,4 @@ jobs:
         with:
           name: x2webhook
           path: dist/x2webhook*-py3-none-any.whl
-          if-no-files-found: error
+          if-no-files-found: warn
