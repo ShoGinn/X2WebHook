@@ -1403,18 +1403,18 @@ dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
 name = "pytest-xdist"
-version = "3.6.0"
+version = "3.5.0"
 description = "pytest xdist plugin for distributed testing, most importantly across multiple CPUs"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.7"
 files = [
-    {file = "pytest_xdist-3.6.0-py3-none-any.whl", hash = "sha256:958e08f38472e1b3a83450d8d3e682e90fdbffee39a97dd0f27185a3bd9074d1"},
-    {file = "pytest_xdist-3.6.0.tar.gz", hash = "sha256:2bf346fb1f1481c8d255750f80bc1dfb9fb18b9ad5286ead0b741b6fd56d15b7"},
+    {file = "pytest-xdist-3.5.0.tar.gz", hash = "sha256:cbb36f3d67e0c478baa57fa4edc8843887e0f6cfc42d677530a36d7472b32d8a"},
+    {file = "pytest_xdist-3.5.0-py3-none-any.whl", hash = "sha256:d075629c7e00b611df89f490a5063944bee7a4362a5ff11c7cc7824a03dfce24"},
 ]
 
 [package.dependencies]
-execnet = ">=2.1"
-pytest = ">=7.0.0"
+execnet = ">=1.1"
+pytest = ">=6.2.0"
 
 [package.extras]
 psutil = ["psutil (>=3.0)"]
@@ -1748,13 +1748,13 @@ files = [
 
 [[package]]
 name = "twikit"
-version = "1.5.3"
+version = "1.5.4"
 description = "Twitter API wrapper for python with **no API key required**."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "twikit-1.5.3-py3-none-any.whl", hash = "sha256:1c72febe4d7fe5249dff0bb38c80a67423bea739fbf7c42d0cd6064d7b30aded"},
-    {file = "twikit-1.5.3.tar.gz", hash = "sha256:f35a3ae9a6285907bfae38b17e878e1c70147aedeb997a4683f8783db4a65c13"},
+    {file = "twikit-1.5.4-py3-none-any.whl", hash = "sha256:3b09d0dc40be90c1e115344bb57252da058146cb77f4b5b1c5557f065f26c28f"},
+    {file = "twikit-1.5.4.tar.gz", hash = "sha256:eb5bb0d31291d8fb0e6d3e62f81d0c348cf5557236a51b7c961a8356f461f5c8"},
 ]
 
 [package.dependencies]
