@@ -1,8 +1,15 @@
-from unittest.mock import Mock, patch
+from importlib.metadata import PackageNotFoundError
+from unittest.mock import MagicMock, Mock, patch
 
 import pytest
-from x2webhook.__main__ import handle_errors, initialize_clients, main, main_loop
+import pytest_mock
+from x2webhook import __main__
 from x2webhook.settings import Settings
+
+
+@pytest.fixture()
+def metadata_mock(mocker: pytest_mock.MockerFixture) -> MagicMock:
+    return mocker.patch("x2webhook.__main__.importlib.metadata")
 
 
 # Parametrized test cases for happy path, edge cases, and error cases
@@ -35,7 +42,7 @@ def test_initialize_clients(
     settings = Settings(mongodb_uri=mongodb_uri, mongodb_db_name=mongodb_db_name)
 
     # Act
-    twikit_client, mongodb_client = initialize_clients(settings)
+    twikit_client, mongodb_client = __main__.initialize_clients(settings)
 
     # Assert
     mock_mongodb_client.assert_called_once_with(
@@ -110,7 +117,7 @@ def test_handle_errors(
     expected_logs: list,
 ) -> None:
     # Act
-    result = handle_errors(error_count, max_errors, e)
+    result = __main__.handle_errors(error_count, max_errors, e)
 
     # Assert
     assert (
@@ -154,7 +161,7 @@ def test_main_loop(
 
     # Act
     with patch("x2webhook.__main__.handle_errors", return_value=expected_error_count) as mock_handle_errors:
-        main_loop(
+        __main__.main_loop(
             app_settings,
             mock_twikit_client,
             mock_mongodb_client,
@@ -186,7 +193,7 @@ def test_main(
     mock_initialize_clients.return_value = (Mock(), Mock())
 
     # Act
-    main()
+    __main__.main()
 
     # Assert
     mock_get_config.assert_called()
@@ -194,3 +201,24 @@ def test_main(
     mock_initialize_clients.assert_called()
     mock_x_login.assert_called()
     mock_main_loop.assert_called()
+
+
+@pytest.mark.parametrize(
+    ("package_name", "expected_version", "test_id"),
+    [
+        (__name__, "1.0.0", "happy_path_current_module"),
+        (__package__, "2.3.4", "happy_path_current_package"),
+        ("nonexistent_package", "Unknown", "error_nonexistent_package"),
+    ],
+)
+def test_get_version(metadata_mock: MagicMock, package_name: str, expected_version: str, test_id: str) -> None:
+    # Arrange
+    if package_name != "nonexistent_package":
+        metadata_mock.version.return_value = expected_version
+    else:
+        metadata_mock.version.side_effect = PackageNotFoundError
+    # Act
+    result = __main__.get_version()
+
+    # Assert
+    assert result == expected_version, f"Test ID: {test_id}"

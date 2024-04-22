@@ -1,10 +1,12 @@
 """Posts new tweets from a list of X accounts to a Discord webhook."""
 
+import importlib.metadata
 import time
 
 from loguru import logger
 from twikit import Client  # type: ignore[import-untyped]
 
+from x2webhook import __package_name__
 from x2webhook.db.mongodb import MongoDBClient
 from x2webhook.db.user import load_users_from_db
 from x2webhook.logging.logging import setup_logger
@@ -33,6 +35,15 @@ def handle_errors(error_count: int, max_errors: int, e: Exception) -> int:
     return error_count
 
 
+def get_version() -> str:
+    """Return the version of the program."""
+    try:
+        version = importlib.metadata.version(__package__ or __name__)
+    except Exception:
+        version = "Unknown"
+    return version
+
+
 def main_loop(
     settings: Settings,
     twikit_client: Client,
@@ -43,6 +54,7 @@ def main_loop(
     error_count = 0
     max_errors = 5
     iterations = 0
+    logger.info(f"Watching for new tweets" f" every {settings.timer_interval!s} seconds.")
     while True:
         try:
             loaded_x_users = load_users_from_db(mongodb_client=mongodb_client)
@@ -72,6 +84,7 @@ def main() -> None:
     """
     settings = get_config()
     setup_logger()
+    logger.info(f"Starting {__package_name__} version {get_version()}")
     twikit_client, mongodb_client = initialize_clients(settings)
 
     x_login(
@@ -79,7 +92,6 @@ def main() -> None:
         twikit_client=twikit_client,
         mongodb_client=mongodb_client,
     )
-    logger.info(f"Watching for new tweets" f" every {settings.timer_interval!s} seconds.")
     main_loop(settings, twikit_client, mongodb_client)
 
 

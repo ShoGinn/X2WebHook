@@ -6,6 +6,8 @@ from enum import Enum
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from x2webhook import __app_name__
+
 
 class AppEnv(str, Enum):
     """Enumeration representing the different application environments.
@@ -65,7 +67,7 @@ class Settings(BaseSettings):
 
     timer_interval: int = 300
     mongodb_uri: str = Field(default="mongodb://localhost:27017")
-    mongodb_db_name: str = "x2webhook"
+    mongodb_db_name: str = __app_name__
     mongodb_users_collection: str = "users"
     mongodb_cookies_collection: str = "cookies"
 

@@ -73,6 +73,7 @@ def test_settings_happy_path(
     assert settings.x_email == x_email
     assert settings.timer_interval == timer_interval
     assert settings.mongodb_uri == mongodb_uri
+    assert settings.mongodb_db_name == "x2webhook"
 
 
 # Edge cases
