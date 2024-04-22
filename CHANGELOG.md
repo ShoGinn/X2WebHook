@@ -2,6 +2,40 @@
 
 
 
+## v0.0.1-rc.1 (2024-04-22)
+
+### Chore
+
+* chore: remove dependabot
+Migrate to renovate ([`fb3e4c2`](https://github.com/ShoGinn/X2WebHook/commit/fb3e4c26508f246440619d9c623deeb9ced43200))
+
+* chore(deps): update twikit ([`a1b1f11`](https://github.com/ShoGinn/X2WebHook/commit/a1b1f11ad74ba5fafedd17e321ebadc59bbb23f8))
+
+* chore(dev-deps): update deps ([`bf88072`](https://github.com/ShoGinn/X2WebHook/commit/bf88072a6c757c7bcaac48b9983b998450ba7529))
+
+### Ci
+
+* ci: add github-actions ([`74b6028`](https://github.com/ShoGinn/X2WebHook/commit/74b6028bc9449c8fb39f59b51845ff0ca07cb1a3))
+
+* ci: don&#39;t error on upload artifact ([`a8f4cc5`](https://github.com/ShoGinn/X2WebHook/commit/a8f4cc5dea14261f3f00f77b73acda68fb1e5219))
+
+### Fix
+
+* fix(deps): update dependency twikit to v1.5.5 ([`99a71cb`](https://github.com/ShoGinn/X2WebHook/commit/99a71cb6d4b19aba8e814925bae69784ef12a3c6))
+
+### Unknown
+
+* Merge pull request #4 from ShoGinn/renovate/twikit-1.x-lockfile
+
+chore(deps): update dependency twikit to v1.5.5 ([`c84738f`](https://github.com/ShoGinn/X2WebHook/commit/c84738f0769e9e4f47be370731f1e75e4608f834))
+
+* Merge pull request #2 from ShoGinn/renovate/configure
+
+chore: Configure Renovate ([`51c8acc`](https://github.com/ShoGinn/X2WebHook/commit/51c8acc85bb4bc6a3520937ac3c40563a4c607e7))
+
+* Add renovate.json ([`1566ba0`](https://github.com/ShoGinn/X2WebHook/commit/1566ba0fa87ab5d314efaab3aaae84d198979945))
+
+
 ## v0.0.0 (2024-04-18)
 
 ### Build
