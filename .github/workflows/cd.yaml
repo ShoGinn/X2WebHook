@@ -33,7 +33,7 @@ jobs:
     needs: ci-check-python
 
   release:
-    name: Release wheels to pypi
+    name: Build Wheels as Artifacts and Create Releases
     needs: ci-build-python
     runs-on: ubuntu-latest
 
@@ -70,21 +70,6 @@ jobs:
             version \
             --prerelease \
             --patch
-        # gh release edit --prerelease "$(git describe $(git rev-list --tags --max-count=1))"
-        # --define=upload_to_repository=true \
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY_USERNAME: __token__
-
-      - name: Create Continuous Deployment - Beta (non-prod)
-        if: steps.get_branch.outputs.branch == 'main' && inputs.production_release != 'true'
-        run: |
-          poetry run semantic-release \
-            -v \
-            version \
-            --prerelease
-        # gh release edit --prerelease "v$(poetry run semantic-release print-version --current)"
-        # --define=upload_to_repository=true \
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_USERNAME: __token__
