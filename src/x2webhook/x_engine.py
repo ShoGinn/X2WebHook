@@ -1,9 +1,9 @@
 """X-related functions for fetching and posting tweets."""
 
 from loguru import logger
-from twikit import Client  # type: ignore[import-untyped]
-from twikit.tweet import Tweet  # type: ignore[import-untyped]
-from twikit.utils import Result  # type: ignore[import-untyped]
+from twikit.client import Client
+from twikit.tweet import Tweet
+from twikit.utils import Result
 
 from x2webhook.db.mongodb import MongoDBClient
 from x2webhook.db.user import User
