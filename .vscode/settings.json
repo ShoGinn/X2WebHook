@@ -19,6 +19,7 @@
     "ensurepath",
     "loguru",
     "mypy",
+    "NIXPACKS",
     "pipx",
     "Pydantic",
     "pymongo",
