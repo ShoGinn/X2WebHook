@@ -2,6 +2,18 @@
 
 
 
+## v0.0.3 (2024-04-23)
+
+### Fix
+
+* fix(deps): update twikit
+Types added ([`e068811`](https://github.com/ShoGinn/X2WebHook/commit/e06881174cdb05a464accdf5bf6e7cd23a1c4bcd))
+
+### Refactor
+
+* refactor: clean up app code ([`420c9e5`](https://github.com/ShoGinn/X2WebHook/commit/420c9e5ffa35791bc834a0c78755603123036a95))
+
+
 ## v0.0.2 (2024-04-23)
 
 ### Chore
