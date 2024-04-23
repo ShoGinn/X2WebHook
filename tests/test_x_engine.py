@@ -4,15 +4,7 @@ from unittest.mock import MagicMock, Mock, patch
 import pytest
 from pydantic import SecretStr
 from twikit.utils import Result  # type: ignore[import-untyped]
-from x2webhook.x_engine import (
-    check_new_tweets,
-    fetch_tweets,
-    get_latest_tweets,
-    get_non_retweet,
-    login_with_cookies,
-    login_with_credentials,
-    x_login,
-)
+from x2webhook import x_engine
 
 if TYPE_CHECKING:
     from x2webhook.settings import Settings
@@ -115,7 +107,7 @@ def get_mock_twikit_client() -> MagicMock:
 )
 def test_get_non_retweet(test_id: str, tweets_input: "Result", expected_output: str | None) -> None:
     # Act
-    result = get_non_retweet(tweets_input)
+    result = x_engine.get_non_retweet(tweets_input)
 
     # Assert
     if expected_output is None:
@@ -158,7 +150,7 @@ def test_fetch_tweets(
     test_id: str,
 ) -> None:
     # Act
-    result = fetch_tweets(client, account_to_check)
+    result = x_engine.fetch_tweets(client, account_to_check)
     # Assert
     assert len(result) == len(expected_result), f"Test failed for {test_id}"
 
@@ -183,7 +175,7 @@ def test_check_new_tweets(
     user_tweets = create_mock_tweet_result(tweet_text, tweet_id)
 
     # Act
-    result = check_new_tweets(user_tweets, previous_tweet_id)
+    result = x_engine.check_new_tweets(user_tweets, previous_tweet_id)
     # Assert
     if expected_result is None:
         assert result is None, f"Test failed for {test_id}"
@@ -207,7 +199,7 @@ def test_get_latest_tweets(
     mock_get_non_retweet.return_value = Mock()
 
     # Act
-    get_latest_tweets(users, mock_twikit_client, mock_mongodb_client)  # type: ignore[arg-type]
+    x_engine.get_latest_tweets(users, mock_twikit_client, mock_mongodb_client)  # type: ignore[arg-type]
 
     # Assert
     assert mock_fetch_tweets.call_count == len(users)
@@ -233,7 +225,7 @@ def test_get_latest_tweets_no_new_tweets(
     mock_get_non_retweet.return_value = None
 
     # Act
-    get_latest_tweets(users, mock_twikit_client, mock_mongodb_client)  # type: ignore[arg-type]
+    x_engine.get_latest_tweets(users, mock_twikit_client, mock_mongodb_client)  # type: ignore[arg-type]
 
     # Assert
     assert mock_fetch_tweets.call_count == len(users)
@@ -250,13 +242,53 @@ def test_login_with_cookies() -> None:
     cookies = {"session": "1234"}
 
     # Act
-    login_with_cookies(mock_twikit_client, cookies)
+    x_engine.login_with_cookies(mock_twikit_client, cookies)
 
     # Assert
     mock_twikit_client.set_cookies.assert_called_once_with(cookies)
 
 
-def test_login_with_credentials() -> None:
+@patch("x2webhook.x_engine.validate_user")
+def test_login_with_cookies_error(mock_validate_user: Mock) -> None:
+    # Arrange
+    mock_twikit_client = Mock()
+    cookies = {"session": "1234"}
+    mock_validate_user.return_value = False
+
+    # Act & Assert
+    with pytest.raises(ValueError, match="Invalid cookies."):
+        x_engine.login_with_cookies(mock_twikit_client, cookies)
+
+
+def test_validate_user() -> None:
+    # Arrange
+    mock_twikit_client = Mock()
+
+    # Act
+    result = x_engine.validate_user(mock_twikit_client)
+
+    # Assert
+    mock_twikit_client.user.assert_called_once()
+    assert result is True
+
+
+def test_validate_user_error() -> None:
+    # Arrange
+    mock_twikit_client = Mock()
+    mock_twikit_client.user.side_effect = Exception("Error")
+
+    # Act
+    result = x_engine.validate_user(mock_twikit_client)
+
+    # Assert
+    mock_twikit_client.user.assert_called_once()
+    assert result is False
+
+
+@patch("x2webhook.x_engine.MongoDBClient")
+def test_login_with_credentials(
+    mock_mongodb_client: Mock,
+) -> None:
     # Arrange
     mock_twikit_client = Mock()
     app_settings: "Settings" = Mock()
@@ -265,7 +297,7 @@ def test_login_with_credentials() -> None:
     app_settings.x_password = SecretStr("test_password")
 
     # Act
-    login_with_credentials(mock_twikit_client, app_settings)
+    result = x_engine.login_with_credentials(mock_twikit_client, mock_mongodb_client, app_settings)
 
     # Assert
     mock_twikit_client.login.assert_called_once_with(
@@ -273,9 +305,13 @@ def test_login_with_credentials() -> None:
         auth_info_2=app_settings.x_email,
         password=app_settings.x_password.get_secret_value(),
     )
+    assert result is True
 
 
-def test_login_with_credentials_no_credentials_error() -> None:
+@patch("x2webhook.x_engine.MongoDBClient")
+def test_login_with_credentials_no_credentials_error(
+    mock_mongodb_client: Mock,
+) -> None:
     # Arrange
     mock_twikit_client = Mock()
     app_settings: "Settings" = Mock()
@@ -284,7 +320,25 @@ def test_login_with_credentials_no_credentials_error() -> None:
 
     # Act & Assert
     with pytest.raises(ValueError, match="X credentials are missing or incomplete."):
-        login_with_credentials(mock_twikit_client, app_settings)
+        x_engine.login_with_credentials(mock_twikit_client, mock_mongodb_client, app_settings)
+
+
+@patch("x2webhook.x_engine.MongoDBClient")
+def test_login_with_credentials_login_error(
+    mock_mongodb_client: Mock,
+) -> None:
+    # Arrange
+    mock_twikit_client = Mock()
+    mock_twikit_client.login.side_effect = ValueError("Invalid credentials")
+    app_settings: "Settings" = Mock()
+    app_settings.x_username = "test_user"
+    app_settings.x_email = "none@none.com"
+    app_settings.x_password = SecretStr("test_password")
+
+    # Act & Assert
+    result = x_engine.login_with_credentials(mock_twikit_client, mock_mongodb_client, app_settings)
+
+    assert result is False
 
 
 @patch("x2webhook.x_engine.login_with_cookies")
@@ -297,13 +351,12 @@ def test_x_login_no_cookies(mock_login_with_credentials: Mock, mock_login_with_c
     mock_mongodb_client.get_user_cookies.return_value = {}
 
     # Act
-    x_login(app_settings, mock_twikit_client, mock_mongodb_client)
+    x_engine.x_login(app_settings, mock_twikit_client, mock_mongodb_client)
 
     # Assert
-    mock_login_with_credentials.assert_called_once_with(mock_twikit_client, app_settings)
+    mock_login_with_credentials.assert_called_once_with(mock_twikit_client, mock_mongodb_client, app_settings)
     mock_login_with_cookies.assert_not_called()
     mock_mongodb_client.get_user_cookies.assert_called_once()
-    mock_mongodb_client.update_user_cookies.assert_called_once()
 
 
 @patch("x2webhook.x_engine.login_with_cookies")
@@ -316,10 +369,33 @@ def test_x_login_with_cookies(mock_login_with_credentials: Mock, mock_login_with
     mock_mongodb_client.get_user_cookies.return_value = {"test": "cookies"}
 
     # Act
-    x_login(app_settings, mock_twikit_client, mock_mongodb_client)
+    result = x_engine.x_login(app_settings, mock_twikit_client, mock_mongodb_client)
 
     # Assert
+    assert result is True
     mock_login_with_credentials.assert_not_called()
+    mock_login_with_cookies.assert_called_once_with(mock_twikit_client, {"test": "cookies"})
+    mock_mongodb_client.get_user_cookies.assert_called_once()
+    mock_mongodb_client.update_user_cookies.assert_not_called()
+
+
+@patch("x2webhook.x_engine.login_with_cookies")
+@patch("x2webhook.x_engine.login_with_credentials")
+def test_x_login_with_cookies_error(mock_login_with_credentials: Mock, mock_login_with_cookies: Mock) -> None:
+    # Arrange
+    mock_twikit_client = Mock()
+    mock_mongodb_client = Mock()
+    app_settings = Mock()
+    mock_mongodb_client.get_user_cookies.return_value = {"test": "cookies"}
+    mock_login_with_credentials.return_value = False
+
+    # Act
+    mock_login_with_cookies.side_effect = ValueError("Invalid cookies")
+    result = x_engine.x_login(app_settings, mock_twikit_client, mock_mongodb_client)
+
+    # Assert
+    assert result is False
+    mock_login_with_credentials.assert_called_once()
     mock_login_with_cookies.assert_called_once_with(mock_twikit_client, {"test": "cookies"})
     mock_mongodb_client.get_user_cookies.assert_called_once()
     mock_mongodb_client.update_user_cookies.assert_not_called()

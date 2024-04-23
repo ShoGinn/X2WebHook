@@ -87,12 +87,12 @@ def main() -> None:
     logger.info(f"Starting {__package_name__} version {get_version()}")
     twikit_client, mongodb_client = initialize_clients(settings)
 
-    x_login(
+    if x_login(
         app_settings=settings,
         twikit_client=twikit_client,
         mongodb_client=mongodb_client,
-    )
-    main_loop(settings, twikit_client, mongodb_client)
+    ):
+        main_loop(settings, twikit_client, mongodb_client)
 
 
 if __name__ == "__main__":

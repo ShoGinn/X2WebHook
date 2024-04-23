@@ -74,32 +74,66 @@ def get_latest_tweets(users: list[User], twikit_client: Client, mongodb_client: 
         mongodb_client.update_user_previous_tweet_id(user.account_to_check, last_tweet.id)
 
 
+def validate_user(twikit_client: Client) -> bool:
+    """Validate the user's credentials by fetching the user's profile.
+
+    Args:
+        twikit_client (Client): The Twikit client instance.
+
+    Returns:
+        bool: True if the user's credentials are valid, False otherwise.
+    """
+    try:
+        twikit_client.user()
+        return True
+    except Exception as e:
+        logger.error(f"Error validating user: {e}")
+        return False
+
+
 def login_with_cookies(twikit_client: Client, cookies: dict) -> None:
     """Login to X using the provided cookies."""
     logger.info("Using stored cookies for login.")
     twikit_client.set_cookies(cookies)
+    if not validate_user(twikit_client):
+        raise ValueError("Invalid cookies provided. Please login again.")
 
 
-def login_with_credentials(twikit_client: Client, app_settings: Settings) -> None:
+def login_with_credentials(twikit_client: Client, mongodb_client: MongoDBClient, app_settings: Settings) -> bool:
     """Login to X using the provided credentials."""
     # Check to make sure the authentication information is provided
     if not app_settings.x_username or not app_settings.x_email or not app_settings.x_password.get_secret_value():
         raise ValueError("X credentials are missing or incomplete.")
     logger.info("Logging in to X...")
-    twikit_client.login(
-        auth_info_1=app_settings.x_username,
-        auth_info_2=app_settings.x_email,
-        password=app_settings.x_password.get_secret_value(),
-    )
+    twikit_client.http.client.cookies.clear()  # TODO: Remove this once the twikit library is updated
+    try:
+        twikit_client.login(
+            auth_info_1=app_settings.x_username,
+            auth_info_2=app_settings.x_email,
+            password=app_settings.x_password.get_secret_value(),
+        )
+        logger.info("Successfully logged in to X.")
+        store_cookies(mongodb_client, twikit_client)
+        return True
+    except Exception as e:
+        logger.error(f"Error logging in to X: {e}")
+        logger.error("Please check your X credentials and run the program again.")
+        return False
 
 
-def x_login(app_settings: Settings, twikit_client: Client, mongodb_client: MongoDBClient) -> None:
+def store_cookies(mongodb_client: MongoDBClient, twikit_client: Client) -> None:
+    """Store the cookies in the database for future use."""
+    cookies = twikit_client.get_cookies()
+    mongodb_client.update_user_cookies(cookies)
+    logger.info("Cookies saved for future use.")
+
+
+def x_login(app_settings: Settings, twikit_client: Client, mongodb_client: MongoDBClient) -> bool:
     """Login to X using the provided credentials or cookies."""
     if stored_cookies := mongodb_client.get_user_cookies():
-        login_with_cookies(twikit_client, stored_cookies)
-    else:
-        login_with_credentials(twikit_client, app_settings)
-        # Save the cookies for future use
-        cookies = twikit_client.get_cookies()
-        logger.info("Cookies saved for future use.")
-        mongodb_client.update_user_cookies(cookies)
+        try:
+            login_with_cookies(twikit_client, stored_cookies)
+            return True
+        except ValueError as e:
+            logger.error(f"Error logging in with stored cookies: {e}")
+    return login_with_credentials(twikit_client, mongodb_client, app_settings)
