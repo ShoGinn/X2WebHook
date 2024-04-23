@@ -2,6 +2,33 @@
 
 
 
+## v0.0.2 (2024-04-23)
+
+### Chore
+
+* chore(deps): update dependency python-semantic-release to v9.5.0 ([`b5b691e`](https://github.com/ShoGinn/X2WebHook/commit/b5b691eec7385372820108579dfd4d39d5d927ce))
+
+### Ci
+
+* ci: add railway.json ([`a84b1c2`](https://github.com/ShoGinn/X2WebHook/commit/a84b1c2ed1b71fd6cec49c31a56edef55d7cbc75))
+
+* ci: clean up version automation ([`17ff881`](https://github.com/ShoGinn/X2WebHook/commit/17ff8815d14064d86bf579cadca7d12387e49992))
+
+### Fix
+
+* fix: add error checking for logins ([`f252ae3`](https://github.com/ShoGinn/X2WebHook/commit/f252ae31ce93eedc615f44a204df49d8f4bd6934))
+
+### Refactor
+
+* refactor: add logging of version ([`64ca656`](https://github.com/ShoGinn/X2WebHook/commit/64ca6560d20a808f52249d1a0992cdcf6e996a29))
+
+### Unknown
+
+* Merge pull request #5 from ShoGinn/renovate/python-semantic-release-9.x-lockfile
+
+chore(deps): update dependency python-semantic-release to v9.5.0 ([`00de465`](https://github.com/ShoGinn/X2WebHook/commit/00de465c6a679ddf9f98e866cf53aab5cb9966e9))
+
+
 ## v0.0.1 (2024-04-22)
 
 
