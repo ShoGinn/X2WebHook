@@ -11,10 +11,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
         with:
           python-version: ${{ matrix.python }}
 
@@ -48,7 +48,7 @@ jobs:
 
       - name: Upload received snapshots (in case of failure)
         if: failure() && (steps.pytest.outcome == 'failure' || steps.pytest-cov.outcome == 'failure')
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
         with:
           name: test-artifacts-${{ matrix.os }}-python${{ matrix.python }}
           path: tests/**/*.received.txt
