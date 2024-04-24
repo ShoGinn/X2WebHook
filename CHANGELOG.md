@@ -2,6 +2,28 @@
 
 
 
+## v0.0.4 (2024-04-24)
+
+### Chore
+
+* chore(deps): pin dependencies ([`8a3a240`](https://github.com/ShoGinn/X2WebHook/commit/8a3a240f92cf5e6aaf31228c0fc27dd2dae7ba4b))
+
+* chore: update renovate.json ([`7316f15`](https://github.com/ShoGinn/X2WebHook/commit/7316f155927c497f3b37e4d47b8bf843bbd9078d))
+
+### Fix
+
+* fix(deps): update pymongo and twikit
+mypy 1.9.0 -&gt; 1.10.0
+pymongo 4.6.3 -&gt; 4.7.0
+twikit 1.5.6 -&gt; 1.5.7 ([`2016c14`](https://github.com/ShoGinn/X2WebHook/commit/2016c14c5e9c1c2c4e346c20309ca1d7ed8b03e7))
+
+### Unknown
+
+* Merge pull request #10 from ShoGinn/renovate/pin-dependencies
+
+chore(deps): pin dependencies ([`a483cd3`](https://github.com/ShoGinn/X2WebHook/commit/a483cd32d3d16dd6a3ff1680b6c0eb0b35cd1e52))
+
+
 ## v0.0.3 (2024-04-23)
 
 ### Fix
