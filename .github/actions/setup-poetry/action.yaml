@@ -24,7 +24,7 @@ runs:
       run: echo "full_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" >> $GITHUB_OUTPUT
 
     - name: Setup poetry cache
-      uses: actions/cache@v4
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
       with:
         path: ./.venv
         key: venv-${{ hashFiles('poetry.lock') }}-${{ runner.os }}-${{ runner.arch }}-${{ steps.full-python-version.outputs.full_version }}
