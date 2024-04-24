@@ -105,7 +105,6 @@ def login_with_credentials(twikit_client: Client, mongodb_client: MongoDBClient,
     if not app_settings.x_username or not app_settings.x_email or not app_settings.x_password.get_secret_value():
         raise ValueError("X credentials are missing or incomplete.")
     logger.info("Logging in to X...")
-    twikit_client.http.client.cookies.clear()  # TODO: Remove this once the twikit library is updated
     try:
         twikit_client.login(
             auth_info_1=app_settings.x_username,
