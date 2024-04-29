@@ -1036,13 +1036,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "poethepoet"
-version = "0.25.1"
+version = "0.26.0"
 description = "A task runner that works well with poetry."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "poethepoet-0.25.1-py3-none-any.whl", hash = "sha256:fee433f68424593bca6b357f0bf997d64edf42c7305c0d5d335bd570b8d2352b"},
-    {file = "poethepoet-0.25.1.tar.gz", hash = "sha256:98f4446533a4b2bdb08843e211f918b1f2e7f8baf6d1803ef78f64661ed62463"},
+    {file = "poethepoet-0.26.0-py3-none-any.whl", hash = "sha256:d37d543e8ec5fb1d51e04b6c26439fc07c342e541d40fcbe67a3a3189a877db3"},
+    {file = "poethepoet-0.26.0.tar.gz", hash = "sha256:ba964c242676501acc4ed87e71ce4984a752a7bd0684acf13fa34655d9a715eb"},
 ]
 
 [package.dependencies]
@@ -1325,13 +1325,13 @@ diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pytest"
-version = "8.1.2"
+version = "8.2.0"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pytest-8.1.2-py3-none-any.whl", hash = "sha256:6c06dc309ff46a05721e6fd48e492a775ed8165d2ecdf57f156a80c7e95bb142"},
-    {file = "pytest-8.1.2.tar.gz", hash = "sha256:f3c45d1d5eed96b01a2aea70dee6a4a366d51d38f9957768083e4fecfc77f3ef"},
+    {file = "pytest-8.2.0-py3-none-any.whl", hash = "sha256:1733f0620f6cda4095bbf0d9ff8022486e91892245bb9e7d5542c018f612f233"},
+    {file = "pytest-8.2.0.tar.gz", hash = "sha256:d507d4482197eac0ba2bae2e9babf0672eb333017bcedaa5fb1a3d42c1174b3f"},
 ]
 
 [package.dependencies]
@@ -1339,11 +1339,11 @@ colorama = {version = "*", markers = "sys_platform == \"win32\""}
 exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
 iniconfig = "*"
 packaging = "*"
-pluggy = ">=1.4,<2.0"
+pluggy = ">=1.5,<2.0"
 tomli = {version = ">=1", markers = "python_version < \"3.11\""}
 
 [package.extras]
-testing = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
 name = "pytest-cov"
@@ -1382,18 +1382,18 @@ dev = ["pre-commit", "pytest-asyncio", "tox"]
 
 [[package]]
 name = "pytest-xdist"
-version = "3.5.0"
+version = "3.6.1"
 description = "pytest xdist plugin for distributed testing, most importantly across multiple CPUs"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pytest-xdist-3.5.0.tar.gz", hash = "sha256:cbb36f3d67e0c478baa57fa4edc8843887e0f6cfc42d677530a36d7472b32d8a"},
-    {file = "pytest_xdist-3.5.0-py3-none-any.whl", hash = "sha256:d075629c7e00b611df89f490a5063944bee7a4362a5ff11c7cc7824a03dfce24"},
+    {file = "pytest_xdist-3.6.1-py3-none-any.whl", hash = "sha256:9ed4adfb68a016610848639bb7e02c9352d5d9f03d04809919e2dafc3be4cca7"},
+    {file = "pytest_xdist-3.6.1.tar.gz", hash = "sha256:ead156a4db231eec769737f57668ef58a2084a34b2e55c4a8fa20d861107300d"},
 ]
 
 [package.dependencies]
-execnet = ">=1.1"
-pytest = ">=6.2.0"
+execnet = ">=2.1"
+pytest = ">=7.0.0"
 
 [package.extras]
 psutil = ["psutil (>=3.0)"]
@@ -1435,13 +1435,13 @@ yaml = ["PyYaml (>=6.0.1)"]
 
 [[package]]
 name = "python-semantic-release"
-version = "9.5.0"
+version = "9.6.0"
 description = "Automatic Semantic Versioning for Python projects"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "python_semantic_release-9.5.0-py3-none-any.whl", hash = "sha256:1a33e1b038b89e0811da071a355babeaf1c3ede6762ebd831335071884e1d1bd"},
-    {file = "python_semantic_release-9.5.0.tar.gz", hash = "sha256:e82da3caf96e1f917c26b530214443da70c440d58d1ff46e1e8120f76f0c7b2c"},
+    {file = "python_semantic_release-9.6.0-py3-none-any.whl", hash = "sha256:da25609085377492bc3a00e6cb0d443ac201abad97f44d842ccd1f2d16fb9a3e"},
+    {file = "python_semantic_release-9.6.0.tar.gz", hash = "sha256:96c74195f64e5c3bba13509e60720c23ec923271f9abcc034b949037a4536e69"},
 ]
 
 [package.dependencies]
@@ -1728,13 +1728,13 @@ files = [
 
 [[package]]
 name = "twikit"
-version = "1.5.8"
+version = "1.5.9"
 description = "Twitter API wrapper for python with **no API key required**."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "twikit-1.5.8-py3-none-any.whl", hash = "sha256:8a785846c2fe15834e38d03e380a3be2d58d84e08a811afa0e4ffdede45e6e27"},
-    {file = "twikit-1.5.8.tar.gz", hash = "sha256:0f93b28af477a26b8a00ca8a7ef0b0d9b8a9cab9a12ce55d60abf0aca3f4f663"},
+    {file = "twikit-1.5.9-py3-none-any.whl", hash = "sha256:82d62c8df07490f6c5d89fbb15989d61ecb01ec9aaa568f727e799c17891258a"},
+    {file = "twikit-1.5.9.tar.gz", hash = "sha256:23a641609c299d8aa0963a27c4dbe67ccabf315b57f699655e77f4b15075b9b3"},
 ]
 
 [package.dependencies]
@@ -1832,4 +1832,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a2727a6bb0f0abd39738a6cfa23f32e72588467ee9b28e4e640fa188f180f936"
+content-hash = "c3dafe9a604366ffb4a48109dd77ad1e1b603b7f9c6a3584de144bf6024ddffa"
