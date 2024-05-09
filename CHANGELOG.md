@@ -2,6 +2,56 @@
 
 
 
+## v0.0.5 (2024-05-09)
+
+### Chore
+
+* chore(deps): update actions/checkout digest to 44c2b7a ([`ef57ecc`](https://github.com/ShoGinn/X2WebHook/commit/ef57eccf63c945ac0352ef49e0674443e5739a82))
+
+* chore(deps): update deps ([`7c5c081`](https://github.com/ShoGinn/X2WebHook/commit/7c5c081a384d18f4bbb9e8b68c3b8a91ed7a7af8))
+
+* chore(deps): update all non-major dependencies ([`ab3049c`](https://github.com/ShoGinn/X2WebHook/commit/ab3049c440769cf4178dc970b51a4c4f77c0c337))
+
+* chore(deps): update all non-major dependencies ([`8fc8b3a`](https://github.com/ShoGinn/X2WebHook/commit/8fc8b3ac766cd45a50790e218447f242dd0a46a1))
+
+* chore(deps): update all non-major dependencies ([`98b5ae7`](https://github.com/ShoGinn/X2WebHook/commit/98b5ae7f1599f2ae8eb2e5ca725814d140bd625e))
+
+* chore(deps): update actions/checkout digest to 0ad4b8f ([`d424ad2`](https://github.com/ShoGinn/X2WebHook/commit/d424ad2656aa8e1a93e5f093f5df1b3be774df5e))
+
+* chore: new version of twikit solved a TODO
+When logging in; cookies are no cleared in the dependency Twikit ([`69a7c58`](https://github.com/ShoGinn/X2WebHook/commit/69a7c5859343a0b795f3abd2f9be193f68ce45d0))
+
+### Fix
+
+* fix(deps): update all non-major dependencies ([`2145fa8`](https://github.com/ShoGinn/X2WebHook/commit/2145fa8e2248128fd0fd42a82a5fe9cd5e08b26e))
+
+### Unknown
+
+* Merge pull request #16 from ShoGinn/renovate/all-minor-patch
+
+fix(deps): update all non-major dependencies ([`e4bbfb6`](https://github.com/ShoGinn/X2WebHook/commit/e4bbfb67e01e01b22257c4b60546c85d64c32ca0))
+
+* Merge pull request #17 from ShoGinn/renovate/actions-checkout-digest
+
+chore(deps): update actions/checkout digest to 44c2b7a ([`e56d838`](https://github.com/ShoGinn/X2WebHook/commit/e56d8387256cfbb86f8d69daa86425d11e415795))
+
+* Merge pull request #14 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update all non-major dependencies ([`d555ae8`](https://github.com/ShoGinn/X2WebHook/commit/d555ae8c923809ad2b9a4fcb3e5af2e75fa2e393))
+
+* Merge pull request #13 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update all non-major dependencies ([`9d48d4f`](https://github.com/ShoGinn/X2WebHook/commit/9d48d4ff862817906ddfe349405a3a20534f11b2))
+
+* Merge pull request #11 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update all non-major dependencies ([`f0be53d`](https://github.com/ShoGinn/X2WebHook/commit/f0be53db5f2cf6c426b52850686172d3cce7124d))
+
+* Merge pull request #12 from ShoGinn/renovate/actions-checkout-digest
+
+chore(deps): update actions/checkout digest to 0ad4b8f ([`e7a2a8d`](https://github.com/ShoGinn/X2WebHook/commit/e7a2a8d63d1d1ae3208d9a31cf293a6f46b691b3))
+
+
 ## v0.0.4 (2024-04-24)
 
 ### Chore
