@@ -18,19 +18,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # A workaround for pipx isn't installed on M1 runner.
-    # We should remove it after this issue is resolved.
-    # https://github.com/actions/runner-images/issues/9256
-    - if: ${{ runner.os == 'macOS' && runner.arch == 'ARM64' }}
-      run: |
-        pip install poetry
-      shell: bash
-
-    - if: ${{ runner.os != 'macOS' || runner.arch != 'ARM64' }}
+    - name: Set up Poetry
       run: |
         pip install --user pipx
         pipx ensurepath
-        pipx install poetry ${{ runner.os == 'macOS' && '--python "$Python_ROOT_DIR/bin/python"' || '' }}
+        pipx install poetry
       shell: bash
 
     - name: Setup Python
