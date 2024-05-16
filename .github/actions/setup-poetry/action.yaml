@@ -1,5 +1,16 @@
 name: "Python Poetry Action"
 description: "An action to setup Poetry"
+inputs:
+  working-directory:
+    description: "Working directory for the steps"
+    required: true
+  python-version:
+    description: "Version of Python to use"
+    required: true
+  install-dependencies:
+    description: "Whether to install dependencies"
+    required: false
+    default: "true"
 runs:
   using: "composite"
   steps:
@@ -18,13 +29,27 @@ runs:
         pipx install poetry ${{ runner.os == 'macOS' && '--python "$Python_ROOT_DIR/bin/python"' || '' }}
       shell: bash
 
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
     - name: Get full Python version
       id: full-python-version
       shell: bash
       run: echo "full_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" >> $GITHUB_OUTPUT
 
-    - name: Setup poetry cache
-      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+    - name: Cache Poetry
+      uses: actions/cache@v4
       with:
-        path: ./.venv
-        key: venv-${{ hashFiles('poetry.lock') }}-${{ runner.os }}-${{ runner.arch }}-${{ steps.full-python-version.outputs.full_version }}
+        path: ~/.cache/pypoetry
+        key: ${{ runner.os }}-poetry-${{ hashFiles(format('{0}/poetry.lock', inputs.working-directory)) }}-${{ steps.full-python-version.outputs.full_version }}
+        restore-keys: |
+          ${{ runner.os }}-poetry-
+
+    - name: Install Dependencies
+      if: ${{ inputs.install-dependencies == 'true' }}
+      run: |
+        poetry install --no-root --no-interaction
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}

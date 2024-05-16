@@ -43,16 +43,11 @@ jobs:
           # Fetch entire repository history so we can determine version number from it
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
-        with:
-          python-version: "3.10"
-
       - name: Set up Poetry
         uses: ./.github/actions/setup-poetry
-
-      - name: Install dependencies
-        run: poetry install --no-interaction --no-root
+        with:
+          working-directory: .
+          python-version: 3.11
 
       - name: Get branch name
         shell: bash

@@ -23,6 +23,7 @@
     "pipx",
     "Pydantic",
     "pymongo",
+    "pypoetry",
     "setenv",
     "Twikit",
     "venv"
