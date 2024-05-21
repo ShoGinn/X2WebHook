@@ -12,7 +12,7 @@ pydantic = "^2.7.1"
 pydantic-settings = "^2.2.1"
 pymongo = { extras = ["srv"], version = "^4.7.2" }
 python = "^3.10"
-requests = "^2.31.0"
+requests = "^2.32.0"
 twikit = "^1.6.2"
 
 [tool.poetry.group.dev.dependencies]
