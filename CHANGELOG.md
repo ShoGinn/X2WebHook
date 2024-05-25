@@ -2,6 +2,66 @@
 
 
 
+## v0.0.6 (2024-05-25)
+
+### Chore
+
+* chore(ci): update poetry python order ([`26bbb60`](https://github.com/ShoGinn/X2WebHook/commit/26bbb6058a7008f421e06be6c6574af7a8833803))
+
+* chore: update dep range ([`b7bf1fb`](https://github.com/ShoGinn/X2WebHook/commit/b7bf1fb5f358ff112b644f71c9947162ac9b353e))
+
+* chore(deps): update all non-major dependencies ([`1c4775d`](https://github.com/ShoGinn/X2WebHook/commit/1c4775d1ad1e4fae55d7fef1906e1c95d3d6124f))
+
+* chore(deps): update actions/checkout digest to a5ac7e5 ([`a9ab2dd`](https://github.com/ShoGinn/X2WebHook/commit/a9ab2ddf8c45908fa4f889190ee71beedbe3d6ef))
+
+* chore(deps): update deps ([`8aaaaab`](https://github.com/ShoGinn/X2WebHook/commit/8aaaaabf3ff7064db5b660151278b97bef04da1c))
+
+* chore(deps): update all non-major dependencies ([`160353b`](https://github.com/ShoGinn/X2WebHook/commit/160353b6725a858c3ba409919341d59fea114a7e))
+
+* chore(deps): pin dependencies ([`cc578e7`](https://github.com/ShoGinn/X2WebHook/commit/cc578e78d536615b7d7b11d8dbed2c6daf4eee6a))
+
+* chore(deps): update dependency ruff to v0.4.4 ([`5f91296`](https://github.com/ShoGinn/X2WebHook/commit/5f912967a84841b6b751c01de6d8b53a0a523f4f))
+
+* chore(deps): update actions/checkout digest to 0ad4b8f ([`419eecf`](https://github.com/ShoGinn/X2WebHook/commit/419eecf0f95a093a16832f2fef550ba8b0e706c4))
+
+### Ci
+
+* ci: macos runner fixed ([`4a9f4a0`](https://github.com/ShoGinn/X2WebHook/commit/4a9f4a097cfe0ab3c3b5c12eefedff04341d491c))
+
+* ci: remove python 3.10 ([`7547939`](https://github.com/ShoGinn/X2WebHook/commit/75479390029815ed275bed39ed07cdcad8012a11))
+
+* ci: add package install ([`2fc5a06`](https://github.com/ShoGinn/X2WebHook/commit/2fc5a06774f3d77b3f6d03c4a49691844d33a555))
+
+* ci: update ci ([`0e112a2`](https://github.com/ShoGinn/X2WebHook/commit/0e112a2f602ad32e8ad0664700f0c25e5bc55af3))
+
+### Fix
+
+* fix: update requests
+chore: updated dev deps ([`c417341`](https://github.com/ShoGinn/X2WebHook/commit/c417341f16ec73034ad90b53d7a4ef3e7da8f3ac))
+
+### Unknown
+
+* Merge pull request #23 from ShoGinn/renovate/actions-checkout-digest
+
+chore(deps): update actions/checkout digest to a5ac7e5 ([`040bf70`](https://github.com/ShoGinn/X2WebHook/commit/040bf7074a9b82b2b72a8302387e9c94968382d0))
+
+* Merge pull request #22 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update all non-major dependencies ([`4add2ff`](https://github.com/ShoGinn/X2WebHook/commit/4add2ff9a9cbf860030a7583b97841a3dec49ec9))
+
+* Merge pull request #20 from ShoGinn/renovate/all-minor-patch ([`659a5e5`](https://github.com/ShoGinn/X2WebHook/commit/659a5e58c919e8017d5fa9b1160a59c2abdeedb0))
+
+* Merge pull request #21 from ShoGinn/renovate/pin-dependencies ([`ad0574a`](https://github.com/ShoGinn/X2WebHook/commit/ad0574af6aa85116d2ccba061f887c1e6206325a))
+
+* Merge pull request #19 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update dependency ruff to v0.4.4 ([`64d37f5`](https://github.com/ShoGinn/X2WebHook/commit/64d37f540119a163c0d8dcd6701dfca0bf0f9a44))
+
+* Merge pull request #18 from ShoGinn/renovate/actions-checkout-digest
+
+chore(deps): update actions/checkout digest to 0ad4b8f ([`59a4d53`](https://github.com/ShoGinn/X2WebHook/commit/59a4d53ca86ab3bf57cc7a1e600bdcd1210ddb3e))
+
+
 ## v0.0.5 (2024-05-09)
 
 ### Chore
