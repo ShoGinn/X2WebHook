@@ -15,7 +15,7 @@ class RequestsHelper:
     """
 
     @classmethod
-    def request(  # noqa: PLR0912
+    def request(
         cls,
         *args: Any,
         url: str,

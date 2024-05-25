@@ -291,7 +291,7 @@ def test_login_with_credentials(
 ) -> None:
     # Arrange
     mock_twikit_client = Mock()
-    app_settings: "Settings" = Mock()
+    app_settings: Settings = Mock()
     app_settings.x_username = "test_user"
     app_settings.x_email = "none@none.com"
     app_settings.x_password = SecretStr("test_password")
@@ -314,7 +314,7 @@ def test_login_with_credentials_no_credentials_error(
 ) -> None:
     # Arrange
     mock_twikit_client = Mock()
-    app_settings: "Settings" = Mock()
+    app_settings: Settings = Mock()
     app_settings.x_username = ""
     app_settings.x_email = ""
 
@@ -330,7 +330,7 @@ def test_login_with_credentials_login_error(
     # Arrange
     mock_twikit_client = Mock()
     mock_twikit_client.login.side_effect = ValueError("Invalid credentials")
-    app_settings: "Settings" = Mock()
+    app_settings: Settings = Mock()
     app_settings.x_username = "test_user"
     app_settings.x_email = "none@none.com"
     app_settings.x_password = SecretStr("test_password")
