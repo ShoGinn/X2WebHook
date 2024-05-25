@@ -18,6 +18,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Setup Python
+      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
     - name: Set up Poetry
       run: |
         pip install --user pipx
@@ -25,21 +30,21 @@ runs:
         pipx install poetry
       shell: bash
 
-    - name: Setup Python
-      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
-      with:
-        python-version: ${{ inputs.python-version }}
-
     - name: Get full Python version
       id: full-python-version
       shell: bash
-      run: echo "full_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" >> $GITHUB_OUTPUT
+      run:
+        echo "full_version=$(python -c 'import sys; print(".".join(map(str,
+        sys.version_info[:3])))')" >> $GITHUB_OUTPUT
 
     - name: Cache Poetry
       uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
       with:
         path: ~/.cache/pypoetry
-        key: ${{ runner.os }}-poetry-${{ hashFiles(format('{0}/poetry.lock', inputs.working-directory)) }}-${{ steps.full-python-version.outputs.full_version }}
+        key:
+          ${{ runner.os }}-poetry-${{ hashFiles(format('{0}/poetry.lock',
+          inputs.working-directory)) }}-${{
+          steps.full-python-version.outputs.full_version }}
         restore-keys: |
           ${{ runner.os }}-poetry-
 
