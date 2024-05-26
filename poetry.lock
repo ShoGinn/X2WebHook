@@ -1705,13 +1705,13 @@ files = [
 
 [[package]]
 name = "twikit"
-version = "1.6.2"
+version = "1.6.4"
 description = "Twitter API wrapper for python with **no API key required**."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "twikit-1.6.2-py3-none-any.whl", hash = "sha256:06c53de06f111352c57bd62bf7c59b5c72cbf6c32701370624d6284b2d101f7c"},
-    {file = "twikit-1.6.2.tar.gz", hash = "sha256:e4365361b5f180a8762ae14be8d29780d3dc78fd39c45a9bf2df0f9005accc58"},
+    {file = "twikit-1.6.4-py3-none-any.whl", hash = "sha256:855526fc437a39fc35b1307f19693f9106fc7cd8eaf8436f1c7376fc9d8b04ef"},
+    {file = "twikit-1.6.4.tar.gz", hash = "sha256:2fc4ba6489527dca77d9c731c30526b0c89a8f04990e6e02053e7a1c2e55b700"},
 ]
 
 [package.dependencies]
@@ -1809,4 +1809,4 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11, <3.13"
-content-hash = "78bdc90dff40934b21254a62cfb8bf39b0b4bd7b7e5aca619cddaa5f36e8aa94"
+content-hash = "dfdbf8b55a25f71d4a0bb8e7f8a3a8bcc03f5b7b5f91d77a80d96236f12d11e9"
