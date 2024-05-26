@@ -2,6 +2,17 @@
 
 
 
+## v0.0.7 (2024-05-26)
+
+### Fix
+
+* fix(deps): update dependency twikit to v1.6.4 ([`4e0b79a`](https://github.com/ShoGinn/X2WebHook/commit/4e0b79a210edaece2f7aef88a3c6a186aed5e697))
+
+### Unknown
+
+* Merge pull request #25 from ShoGinn/renovate/all-minor-patch ([`7978bc8`](https://github.com/ShoGinn/X2WebHook/commit/7978bc8addd42f6a0b47b9d14daf353683dc7a56))
+
+
 ## v0.0.6 (2024-05-25)
 
 ### Chore
