@@ -2,6 +2,27 @@
 
 
 
+## v0.0.8 (2024-06-04)
+
+### Fix
+
+* fix(deps): update twikit and other deps ([`cd6fb6d`](https://github.com/ShoGinn/X2WebHook/commit/cd6fb6d00faf75e4ae4e012eca3af70c2a266121))
+
+* fix(deps): update all non-major dependencies ([`bbdfbac`](https://github.com/ShoGinn/X2WebHook/commit/bbdfbac7f5ce1cada3f843381774c7e6ad9bceed))
+
+* fix(deps): update all non-major dependencies ([`c12623e`](https://github.com/ShoGinn/X2WebHook/commit/c12623ec6c40a292629f2dd8643079aaec6a897b))
+
+### Unknown
+
+* Merge pull request #27 from ShoGinn/renovate/all-minor-patch
+
+fix(deps): update all non-major dependencies ([`1820fe4`](https://github.com/ShoGinn/X2WebHook/commit/1820fe4ac0d6041155a11eb7042dabed28c2e071))
+
+* Merge pull request #26 from ShoGinn/renovate/all-minor-patch
+
+fix(deps): update all non-major dependencies ([`bf1ad6a`](https://github.com/ShoGinn/X2WebHook/commit/bf1ad6ad25730cf59f5e012e874c900a7552cb00))
+
+
 ## v0.0.7 (2024-05-26)
 
 ### Fix
