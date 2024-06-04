@@ -8,12 +8,12 @@ version = "0.0.7"
 
 [tool.poetry.dependencies]
 loguru = "0.7.2"
-pydantic = "2.7.2"
-pydantic-settings = "2.2.1"
+pydantic = "2.7.3"
+pydantic-settings = "2.3.0"
 pymongo = { extras = ["srv"], version = "4.7.2" }
 python = "^3.11, <3.13"
 requests = "2.32.3"
-twikit = "1.6.4"
+twikit = "1.7.1"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "1.10.0"
@@ -26,8 +26,8 @@ pytest-mock = "3.14.0"
 pytest-xdist = "3.6.1"
 python-semantic-release = "9.8.0"
 responses = "0.25.0"
-ruff = "0.4.6"
-types-requests = "2.32.0.20240523"
+ruff = "0.4.7"
+types-requests = "2.32.0.20240602"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
