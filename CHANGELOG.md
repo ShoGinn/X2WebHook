@@ -2,6 +2,19 @@
 
 
 
+## v0.0.9 (2024-06-09)
+
+### Fix
+
+* fix(deps): update all non-major dependencies ([`638d13f`](https://github.com/ShoGinn/X2WebHook/commit/638d13fcf061e583b426845978f7943daa66ea03))
+
+### Unknown
+
+* Merge pull request #28 from ShoGinn/renovate/all-minor-patch
+
+fix(deps): update all non-major dependencies ([`0831187`](https://github.com/ShoGinn/X2WebHook/commit/08311870629de2cca886b5502c9b80f1aafa12de))
+
+
 ## v0.0.8 (2024-06-04)
 
 ### Fix
