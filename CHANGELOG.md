@@ -1,6 +1,24 @@
 # CHANGELOG
 
+## v0.0.10 (2024-06-17)
 
+### Chore
+
+* chore(deps): update actions/checkout digest to 692973e ([`1de63d0`](https://github.com/ShoGinn/X2WebHook/commit/1de63d064e59c3aab0c6216183ce22b1ed27f416))
+
+### Fix
+
+* fix(deps): update all non-major dependencies ([`1ae5f4d`](https://github.com/ShoGinn/X2WebHook/commit/1ae5f4d2ab33202bc35c8f3fe6d5a80bf3391717))
+
+### Unknown
+
+* Merge pull request #29 from ShoGinn/renovate/all-minor-patch
+
+fix(deps): update all non-major dependencies ([`ec1f207`](https://github.com/ShoGinn/X2WebHook/commit/ec1f2073ab3cfd098843fb09f219d68bd945b59a))
+
+* Merge pull request #30 from ShoGinn/renovate/actions-checkout-digest
+
+chore(deps): update actions/checkout digest to 692973e ([`6dc3957`](https://github.com/ShoGinn/X2WebHook/commit/6dc39578a25dd497814983e48dd28529871d59f5))
 
 ## v0.0.9 (2024-06-09)
 
@@ -13,7 +31,6 @@
 * Merge pull request #28 from ShoGinn/renovate/all-minor-patch
 
 fix(deps): update all non-major dependencies ([`0831187`](https://github.com/ShoGinn/X2WebHook/commit/08311870629de2cca886b5502c9b80f1aafa12de))
-
 
 ## v0.0.8 (2024-06-04)
 
@@ -35,7 +52,6 @@ fix(deps): update all non-major dependencies ([`1820fe4`](https://github.com/Sho
 
 fix(deps): update all non-major dependencies ([`bf1ad6a`](https://github.com/ShoGinn/X2WebHook/commit/bf1ad6ad25730cf59f5e012e874c900a7552cb00))
 
-
 ## v0.0.7 (2024-05-26)
 
 ### Fix
@@ -45,7 +61,6 @@ fix(deps): update all non-major dependencies ([`bf1ad6a`](https://github.com/Sho
 ### Unknown
 
 * Merge pull request #25 from ShoGinn/renovate/all-minor-patch ([`7978bc8`](https://github.com/ShoGinn/X2WebHook/commit/7978bc8addd42f6a0b47b9d14daf353683dc7a56))
-
 
 ## v0.0.6 (2024-05-25)
 
@@ -106,7 +121,6 @@ chore(deps): update dependency ruff to v0.4.4 ([`64d37f5`](https://github.com/Sh
 
 chore(deps): update actions/checkout digest to 0ad4b8f ([`59a4d53`](https://github.com/ShoGinn/X2WebHook/commit/59a4d53ca86ab3bf57cc7a1e600bdcd1210ddb3e))
 
-
 ## v0.0.5 (2024-05-09)
 
 ### Chore
@@ -156,7 +170,6 @@ chore(deps): update all non-major dependencies ([`f0be53d`](https://github.com/S
 
 chore(deps): update actions/checkout digest to 0ad4b8f ([`e7a2a8d`](https://github.com/ShoGinn/X2WebHook/commit/e7a2a8d63d1d1ae3208d9a31cf293a6f46b691b3))
 
-
 ## v0.0.4 (2024-04-24)
 
 ### Chore
@@ -178,7 +191,6 @@ twikit 1.5.6 -&gt; 1.5.7 ([`2016c14`](https://github.com/ShoGinn/X2WebHook/commi
 
 chore(deps): pin dependencies ([`a483cd3`](https://github.com/ShoGinn/X2WebHook/commit/a483cd32d3d16dd6a3ff1680b6c0eb0b35cd1e52))
 
-
 ## v0.0.3 (2024-04-23)
 
 ### Fix
@@ -189,7 +201,6 @@ Types added ([`e068811`](https://github.com/ShoGinn/X2WebHook/commit/e06881174cd
 ### Refactor
 
 * refactor: clean up app code ([`420c9e5`](https://github.com/ShoGinn/X2WebHook/commit/420c9e5ffa35791bc834a0c78755603123036a95))
-
 
 ## v0.0.2 (2024-04-23)
 
@@ -217,9 +228,7 @@ Types added ([`e068811`](https://github.com/ShoGinn/X2WebHook/commit/e06881174cd
 
 chore(deps): update dependency python-semantic-release to v9.5.0 ([`00de465`](https://github.com/ShoGinn/X2WebHook/commit/00de465c6a679ddf9f98e866cf53aab5cb9966e9))
 
-
 ## v0.0.1 (2024-04-22)
-
 
 ## v0.0.1-rc.1 (2024-04-22)
 
@@ -253,7 +262,6 @@ chore(deps): update dependency twikit to v1.5.5 ([`c84738f`](https://github.com/
 chore: Configure Renovate ([`51c8acc`](https://github.com/ShoGinn/X2WebHook/commit/51c8acc85bb4bc6a3520937ac3c40563a4c607e7))
 
 * Add renovate.json ([`1566ba0`](https://github.com/ShoGinn/X2WebHook/commit/1566ba0fa87ab5d314efaab3aaae84d198979945))
-
 
 ## v0.0.0 (2024-04-18)
 
