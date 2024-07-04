@@ -3,14 +3,10 @@ description: "An action to setup Poetry"
 inputs:
   working-directory:
     description: "Working directory for the steps"
-    required: true
+    required: false
   python-version:
     description: "Version of Python to use"
     required: true
-  install-dependencies:
-    description: "Whether to install dependencies"
-    required: false
-    default: "true"
   install-package:
     description: "Whether to install the package"
     required: false
@@ -18,17 +14,27 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Setup Python
-      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
-      with:
-        python-version: ${{ inputs.python-version }}
-
+    - name: Check working-directory if install-package is true
+      run: |
+        if [ "${{ inputs.install-package }}" = "true" ] && [ -z "${{ inputs.working-directory }}" ]; then
+          echo "Error: working-directory must be provided if install-package is true."
+          exit 1
+        fi
+      shell: bash
+    - name: Update PATH for pipx
+      shell: bash
+      run: |
+        echo "$PATH:/root/.local/bin" >> $GITHUB_PATH
     - name: Set up Poetry
       run: |
         pip install --user pipx
-        pipx ensurepath
         pipx install poetry
       shell: bash
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
 
     - name: Get full Python version
       id: full-python-version
@@ -38,7 +44,7 @@ runs:
         sys.version_info[:3])))')" >> $GITHUB_OUTPUT
 
     - name: Cache Poetry
-      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pypoetry
         key:
@@ -48,14 +54,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-poetry-
 
-    - name: Install Dependencies
-      if: ${{ inputs.install-dependencies == 'true' }}
-      run: |
-        poetry install --no-root --no-interaction
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-
-    - name: Install Package
+    - name: Poetry Install
       if: ${{ inputs.install-package == 'true' }}
       run: |
         poetry install --no-interaction
