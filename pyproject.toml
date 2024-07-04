@@ -4,7 +4,7 @@ description = "Check X for new tweets and send them to a webhook."
 license = "MIT"
 name = "x2webhook"
 readme = "README.md"
-version = "0.0.10"
+version = "0.0.11"
 
 [tool.poetry.dependencies]
 loguru = "0.7.2"

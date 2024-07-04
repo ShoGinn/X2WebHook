@@ -1,5 +1,50 @@
 # CHANGELOG
 
+## v0.0.11 (2024-07-04)
+
+### Build
+
+* build(deps): bump urllib3 from 2.2.1 to 2.2.2
+
+Bumps [urllib3](https://github.com/urllib3/urllib3) from 2.2.1 to 2.2.2.
+- [Release notes](https://github.com/urllib3/urllib3/releases)
+- [Changelog](https://github.com/urllib3/urllib3/blob/main/CHANGES.rst)
+- [Commits](https://github.com/urllib3/urllib3/compare/2.2.1...2.2.2)
+
+---
+updated-dependencies:
+- dependency-name: urllib3
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] &lt;support@github.com&gt; ([`571a4c4`](https://github.com/ShoGinn/X2WebHook/commit/571a4c407f84b5b9f7fa9317dc0466a99ad36342))
+
+### Chore
+
+* chore(deps): update all non-major dependencies ([`526375d`](https://github.com/ShoGinn/X2WebHook/commit/526375d680cdea1450fb0322ba33a6ee8aac272d))
+
+* chore(deps): update dependency python-semantic-release to v9.8.3 ([`8f578ff`](https://github.com/ShoGinn/X2WebHook/commit/8f578ff4d554551644840c6233695ab99aaf4695))
+
+### Fix
+
+* fix: update major deps
+Also removed groupings ([`df82bdd`](https://github.com/ShoGinn/X2WebHook/commit/df82bdd2157cb1d0c608c1e43c212fadf7f14b1d))
+
+### Unknown
+
+* Merge pull request #33 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update all non-major dependencies
+fix: update twikit ([`d637b26`](https://github.com/ShoGinn/X2WebHook/commit/d637b26b5630f6fa0933a3326414af109c34265d))
+
+* Merge pull request #32 from ShoGinn/renovate/all-minor-patch
+
+chore(deps): update dependency python-semantic-release to v9.8.3 ([`e5206d1`](https://github.com/ShoGinn/X2WebHook/commit/e5206d1a4dd600057ad7dc057d46af603481be0c))
+
+* Merge pull request #31 from ShoGinn/dependabot/pip/urllib3-2.2.2
+
+build(deps): bump urllib3 from 2.2.1 to 2.2.2 ([`9e35ac7`](https://github.com/ShoGinn/X2WebHook/commit/9e35ac77b0a2966fa18c13bc3aeb42badbb77182))
+
 ## v0.0.10 (2024-06-17)
 
 ### Chore
