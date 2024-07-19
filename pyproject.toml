@@ -16,7 +16,7 @@ requests = "2.32.3"
 twikit = "1.7.6"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.10.1"
+mypy = "1.11.0"
 pip-audit = "2.7.3"
 poethepoet = "0.27.0"
 pre-commit = "3.7.1"
