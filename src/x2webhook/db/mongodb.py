@@ -25,7 +25,7 @@ class MongoDBClient:
         delete_user: Deletes a user from the database.
     """
 
-    def __init__(  # noqa: PLR0913
+    def __init__(
         self,
         uri: str,
         db_name: str,
