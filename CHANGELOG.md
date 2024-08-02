@@ -1,5 +1,75 @@
 # CHANGELOG
 
+## v0.0.12 (2024-08-02)
+
+### Chore
+
+* chore(deps): update dependency mypy to v1.11.1 ([`e261aa0`](https://github.com/ShoGinn/X2WebHook/commit/e261aa0d911902541ddf9cee3438549aae020e08))
+
+* chore(deps): update dependency pre-commit to v3.8.0 ([`6284356`](https://github.com/ShoGinn/X2WebHook/commit/6284356df5dc2b491990176eda9c521c5ae23f17))
+
+* chore(deps): update dependency pytest to v8.3.2 ([`bd1fff0`](https://github.com/ShoGinn/X2WebHook/commit/bd1fff04770f1b1f131b83ff046b469bbb8d723c))
+
+* chore(deps): update dependency ruff to v0.5.5 ([`bb78fbb`](https://github.com/ShoGinn/X2WebHook/commit/bb78fbb2cb831f6c614313f66ef0728fc27a5872))
+
+* chore(deps): update dependency types-requests to v2.32.0.20240712 ([`e7a003b`](https://github.com/ShoGinn/X2WebHook/commit/e7a003bebc0dec5ec80138630b2aeef90b557e9a))
+
+* chore(deps): update dependency python-semantic-release to v9.8.5 ([`3e4b818`](https://github.com/ShoGinn/X2WebHook/commit/3e4b818f29111280452e93ba8e587e0385c28a02))
+
+* chore(deps): update actions/upload-artifact digest to 0b2256b ([`143ad1e`](https://github.com/ShoGinn/X2WebHook/commit/143ad1e1e70a0f9f1b7f01dd8153f01200d7872a))
+
+* chore(deps): update dependency ruff to v0.5.1 ([`daa4515`](https://github.com/ShoGinn/X2WebHook/commit/daa45153dc3fd6bf44c5ea790dce318cc780970e))
+
+* chore(deps): update dependency python-semantic-release to v9.8.4 ([`b484291`](https://github.com/ShoGinn/X2WebHook/commit/b484291e441fbae7ea366694da66322570d2654b))
+
+### Fix
+
+* fix(deps): update dependency pydantic-settings to v2.4.0 ([`b550a75`](https://github.com/ShoGinn/X2WebHook/commit/b550a75404cb9fdd3f7a0f5966a262f817239a06))
+
+### Refactor
+
+* refactor: update dev deps ([`39acaab`](https://github.com/ShoGinn/X2WebHook/commit/39acaabb8f929c24718c005992498bfdd0ebc3f3))
+
+### Unknown
+
+* Merge pull request #45 from ShoGinn/renovate/pydantic-settings-2.x
+
+fix(deps): update dependency pydantic-settings to v2.4.0 ([`8058e9f`](https://github.com/ShoGinn/X2WebHook/commit/8058e9faf8ea20abd384c0b0676f2aad444f0880))
+
+* Merge pull request #46 from ShoGinn/renovate/mypy-1.x
+
+chore(deps): update dependency mypy to v1.11.1 ([`d1b0b7e`](https://github.com/ShoGinn/X2WebHook/commit/d1b0b7e10c9491c2419a58cee507da9cdb020fb7))
+
+* Merge pull request #44 from ShoGinn/renovate/pre-commit-3.x
+
+chore(deps): update dependency pre-commit to v3.8.0 ([`9d96d3e`](https://github.com/ShoGinn/X2WebHook/commit/9d96d3e67eb555a3cb3b06bbbbd76196a474693a))
+
+* Merge pull request #43 from ShoGinn/renovate/pytest-8.x
+
+chore(deps): update dependency pytest to v8.3.2 ([`d044798`](https://github.com/ShoGinn/X2WebHook/commit/d044798f39a12d1fdc0355195cf5db0e10bc8aec))
+
+* Merge pull request #40 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.5.5 ([`e23b92a`](https://github.com/ShoGinn/X2WebHook/commit/e23b92a6afa908f07bf1ffd048b7e8edd7b8626a))
+
+* Merge pull request #39 from ShoGinn/renovate/types-requests-2.x
+
+chore(deps): update dependency types-requests to v2.32.0.20240712 ([`85bc5bf`](https://github.com/ShoGinn/X2WebHook/commit/85bc5bfca5dacf792b2b8e0b2fc2d70288be2447))
+
+* Merge pull request #37 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.8.5 ([`a3e9db9`](https://github.com/ShoGinn/X2WebHook/commit/a3e9db9642291ddbd93431170dc34d3eb0d18150))
+
+* Merge pull request #36 from ShoGinn/renovate/actions-upload-artifact-digest ([`8d0309f`](https://github.com/ShoGinn/X2WebHook/commit/8d0309f979880ff9096c0fd698be2e3f14b5ccb3))
+
+* Merge pull request #35 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.5.1 ([`4fc7b82`](https://github.com/ShoGinn/X2WebHook/commit/4fc7b82df4a9e389acd9aa17285148676a5092c9))
+
+* Merge pull request #34 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.8.4 ([`119ad3b`](https://github.com/ShoGinn/X2WebHook/commit/119ad3b01d7412431f60af4f259222f9da4d39aa))
+
 ## v0.0.11 (2024-07-04)
 
 ### Build
@@ -115,9 +185,9 @@ fix(deps): update all non-major dependencies ([`bf1ad6a`](https://github.com/Sho
 
 * chore: update dep range ([`b7bf1fb`](https://github.com/ShoGinn/X2WebHook/commit/b7bf1fb5f358ff112b644f71c9947162ac9b353e))
 
-* chore(deps): update all non-major dependencies ([`1c4775d`](https://github.com/ShoGinn/X2WebHook/commit/1c4775d1ad1e4fae55d7fef1906e1c95d3d6124f))
-
 * chore(deps): update actions/checkout digest to a5ac7e5 ([`a9ab2dd`](https://github.com/ShoGinn/X2WebHook/commit/a9ab2ddf8c45908fa4f889190ee71beedbe3d6ef))
+
+* chore(deps): update all non-major dependencies ([`1c4775d`](https://github.com/ShoGinn/X2WebHook/commit/1c4775d1ad1e4fae55d7fef1906e1c95d3d6124f))
 
 * chore(deps): update deps ([`8aaaaab`](https://github.com/ShoGinn/X2WebHook/commit/8aaaaabf3ff7064db5b660151278b97bef04da1c))
 
