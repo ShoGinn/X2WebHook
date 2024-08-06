@@ -43,7 +43,7 @@ jobs:
 
       - name: Upload received snapshots (in case of failure)
         if: failure() && (steps.pytest.outcome == 'failure' || steps.pytest-cov.outcome == 'failure')
-        uses: actions/upload-artifact@89ef406dd8d7e03cfd12d9e0a4a378f454709029 # v4
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5ec5a # v4
         with:
           name: test-artifacts-${{ matrix.os }}-python${{ matrix.python }}
           path: tests/**/*.received.txt
