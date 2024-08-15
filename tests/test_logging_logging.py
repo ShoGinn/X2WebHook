@@ -3,6 +3,7 @@ from unittest.mock import Mock
 
 import pytest
 from pytest_mock import MockerFixture
+
 from x2webhook.logging.logging import setup_logger, structured_formatter
 from x2webhook.settings import AppEnv
 

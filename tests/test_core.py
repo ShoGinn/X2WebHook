@@ -1,6 +1,7 @@
 from unittest.mock import Mock, patch
 
 import pytest
+
 from x2webhook.core import App
 from x2webhook.settings import Settings
 

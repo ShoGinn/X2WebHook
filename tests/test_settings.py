@@ -1,5 +1,6 @@
 import pytest
 from pydantic import SecretStr
+
 from x2webhook.settings import AppEnv, LogLevel, Settings, get_config
 
 

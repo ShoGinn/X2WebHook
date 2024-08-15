@@ -4,17 +4,18 @@ from unittest import mock
 import pytest
 import pytest_mock
 from pydantic import HttpUrl, ValidationError
+
 from x2webhook.db.mongodb import MongoDBClient
 from x2webhook.db.user import User, create_default_users, load_users_from_db
 
 
 # Mock the logger
-@pytest.fixture()
+@pytest.fixture
 def user_logger(mocker: pytest_mock.MockFixture) -> mock.MagicMock:
     return mocker.patch("x2webhook.db.user.logger")
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_mongo_client(monkeypatch: pytest.MonkeyPatch) -> mock.MagicMock:
     mock_client = mock.MagicMock()
     monkeypatch.setattr("pymongo.MongoClient", mock_client)

@@ -6,7 +6,7 @@ import pytest
 import responses
 
 
-@pytest.fixture()
+@pytest.fixture
 def http_responses() -> Iterator[responses.RequestsMock]:
     """Create a fake http response."""
     with responses.RequestsMock() as resp_mock:

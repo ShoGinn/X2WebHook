@@ -5,27 +5,28 @@ import pytest
 import pytest_mock
 import responses
 from pydantic import HttpUrl
+
 from x2webhook.db.user import User
 from x2webhook.webhook import create_payload, create_webhook_wait_url, post_tweet
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_session(mocker: pytest_mock.MockerFixture) -> mock.MagicMock:
     return mocker.patch("requests.Session")
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_response() -> mock.MagicMock:
     return mock.MagicMock()
 
 
-@pytest.fixture()
+@pytest.fixture
 def payload() -> dict[str, str]:
     return {"message": "Hello, world!"}
 
 
 # Mocking external dependencies
-@pytest.fixture()
+@pytest.fixture
 def mock_user() -> User:
     return User(
         account_to_check="TestUser",

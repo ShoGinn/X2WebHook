@@ -6,20 +6,21 @@ from unittest import mock
 import pytest
 import pytest_mock
 import requests
+
 from x2webhook.addons.requests import RequestsHelper, get, post
 
 
-@pytest.fixture()
+@pytest.fixture
 def requests_logger(mocker: pytest_mock.MockerFixture) -> mock.MagicMock:
     return mocker.patch("x2webhook.addons.requests.logger")
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_session(mocker: pytest_mock.MockerFixture) -> mock.MagicMock:
     return mocker.patch("requests.Session")
 
 
-@pytest.fixture()
+@pytest.fixture
 def mock_response() -> mock.MagicMock:
     return mock.MagicMock()
 
