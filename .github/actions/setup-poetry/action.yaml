@@ -21,6 +21,10 @@ runs:
           exit 1
         fi
       shell: bash
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
     - name: Update PATH for pipx
       shell: bash
       run: |
@@ -30,12 +34,6 @@ runs:
         pip install --user pipx
         pipx install poetry
       shell: bash
-
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ inputs.python-version }}
-
     - name: Get full Python version
       id: full-python-version
       shell: bash
