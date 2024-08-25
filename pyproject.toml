@@ -16,7 +16,7 @@ requests = "2.32.3"
 twikit = "1.7.6"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "1.11.1"
+mypy = "1.11.2"
 pip-audit = "2.7.3"
 poethepoet = "0.27.0"
 pre-commit = "3.8.0"
@@ -26,7 +26,7 @@ pytest-mock = "3.14.0"
 pytest-xdist = "3.6.1"
 python-semantic-release = "9.8.7"
 responses = "0.25.3"
-ruff = "0.6.1"
+ruff = "0.6.2"
 types-requests = "2.32.0.20240712"
 
 [build-system]
