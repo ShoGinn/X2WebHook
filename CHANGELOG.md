@@ -1,5 +1,95 @@
 # CHANGELOG
 
+## v0.0.13 (2024-09-06)
+
+### Chore
+
+* chore(deps): update dependency ruff to v0.6.4 ([`528d3a9`](https://github.com/ShoGinn/X2WebHook/commit/528d3a91012ddd2605eac5ccd2c6d7477bb4b620))
+
+* chore(deps): update dependency types-requests to v2.32.0.20240905 ([`58005da`](https://github.com/ShoGinn/X2WebHook/commit/58005da8b26b65d070987ae144d6c5c1524083c1))
+
+* chore(deps): update dependency poethepoet to v0.28.0 ([`64d7602`](https://github.com/ShoGinn/X2WebHook/commit/64d7602d42d2367289781957b2a4b7d8697f9498))
+
+* chore(deps): update dependency ruff to v0.6.3 ([`4b62af6`](https://github.com/ShoGinn/X2WebHook/commit/4b62af68515506e392f83fd77151b96192ad483b))
+
+* chore(deps): update dependency python-semantic-release to v9.8.8 ([`468cfd2`](https://github.com/ShoGinn/X2WebHook/commit/468cfd2121e8c9220ac98235d1ed75d15754a22f))
+
+* chore(deps): update actions/upload-artifact digest to 5076954 ([`4209cfb`](https://github.com/ShoGinn/X2WebHook/commit/4209cfb29ba603ac18a75083467864944b90acfe))
+
+* chore(deps-dev): update mypy and ruff ([`bcb6f72`](https://github.com/ShoGinn/X2WebHook/commit/bcb6f72c20e4e15c3357b4b6e280e14935f4e36d))
+
+* chore(ci): update python ([`b1a4ff1`](https://github.com/ShoGinn/X2WebHook/commit/b1a4ff1f30489059db6f5a013da933f6f76d90cf))
+
+* chore(deps): update dependency python-semantic-release to v9.8.7 ([`40c1d49`](https://github.com/ShoGinn/X2WebHook/commit/40c1d4922f3f53d799626c3cef16e7694b1d0a2e))
+
+* chore(deps): update dependency ruff to v0.6.1 ([`3ad7507`](https://github.com/ShoGinn/X2WebHook/commit/3ad750760f658de3adb798bdd3c80a77988cf2da))
+
+* chore(deps): update ruff ([`6c67e0f`](https://github.com/ShoGinn/X2WebHook/commit/6c67e0f2bfde6d180d91eb202e1227141fb24972))
+
+* chore(deps): update dependency ruff to v0.5.7 ([`2f07b69`](https://github.com/ShoGinn/X2WebHook/commit/2f07b697a5b03060b7fe2a237f4fb8d8a2b96f57))
+
+* chore(deps): update actions/upload-artifact digest to 834a144 ([`a94ca24`](https://github.com/ShoGinn/X2WebHook/commit/a94ca2435a6486212d94cb40cba6747b8f201e6a))
+
+* chore(deps): update dependency ruff to v0.5.6 ([`e017edc`](https://github.com/ShoGinn/X2WebHook/commit/e017edc048373cc24ad14a8d0cccc19be826050f))
+
+* chore(deps): update actions/upload-artifact digest to 89ef406 ([`20f600c`](https://github.com/ShoGinn/X2WebHook/commit/20f600ce4d8d8566faa6b10125dc2e3b196f6f0f))
+
+### Fix
+
+* fix(deps): update dependency pydantic to v2.9.0 ([`63563c1`](https://github.com/ShoGinn/X2WebHook/commit/63563c1502ea685565214d186ee91656475d9064))
+
+### Unknown
+
+* Merge pull request #60 from ShoGinn/renovate/pydantic-2.x
+
+fix(deps): update dependency pydantic to v2.9.0 ([`9f54ab5`](https://github.com/ShoGinn/X2WebHook/commit/9f54ab53d0692c44bb6ce5974dae6613295ba62b))
+
+* Merge pull request #59 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.4 ([`2e4e907`](https://github.com/ShoGinn/X2WebHook/commit/2e4e907bb07e7aa14109b0c846162e2069717753))
+
+* Merge pull request #58 from ShoGinn/renovate/types-requests-2.x
+
+chore(deps): update dependency types-requests to v2.32.0.20240905 ([`77cd711`](https://github.com/ShoGinn/X2WebHook/commit/77cd7118e3fe396ec2e44208204481dc3aae1abe))
+
+* Merge pull request #55 from ShoGinn/renovate/poethepoet-0.x
+
+chore(deps): update dependency poethepoet to v0.28.0 ([`d9f0e24`](https://github.com/ShoGinn/X2WebHook/commit/d9f0e24fb26b880f161a863696f92632dafb50ee))
+
+* Merge pull request #53 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.3 ([`4b8687d`](https://github.com/ShoGinn/X2WebHook/commit/4b8687dd061fd534d33f3f6036e0d121ada796f0))
+
+* Merge pull request #56 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.8.8 ([`d5d18da`](https://github.com/ShoGinn/X2WebHook/commit/d5d18dadc5a5daba3506a3c75e120f8b3df3d25d))
+
+* Merge pull request #57 from ShoGinn/renovate/actions-upload-artifact-digest
+
+chore(deps): update actions/upload-artifact digest to 5076954 ([`abe124e`](https://github.com/ShoGinn/X2WebHook/commit/abe124ebbe052e25cd13529736d529309c805008))
+
+* Merge pull request #52 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.8.7 ([`45d2a55`](https://github.com/ShoGinn/X2WebHook/commit/45d2a556f9afdcdfaf15de1f31302ba4f65f8756))
+
+* Merge pull request #51 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.1 ([`858a82d`](https://github.com/ShoGinn/X2WebHook/commit/858a82da9e41741568d85f4964a500bcebcc3046))
+
+* Merge pull request #50 from ShoGinn/renovate/ruff-0.x ([`7e98e61`](https://github.com/ShoGinn/X2WebHook/commit/7e98e6139e68992fce9739d15cda595408d06867))
+
+* Merge pull request #49 from ShoGinn/renovate/actions-upload-artifact-digest
+
+chore(deps): update actions/upload-artifact digest to 834a144 ([`83fcf6b`](https://github.com/ShoGinn/X2WebHook/commit/83fcf6b8d205be932fcd6368d401356f4de19178))
+
+* Merge pull request #48 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.5.6 ([`2ba7500`](https://github.com/ShoGinn/X2WebHook/commit/2ba7500692c02440cd8b6be86573ca4a74ea0800))
+
+* Merge pull request #47 from ShoGinn/renovate/actions-upload-artifact-digest
+
+chore(deps): update actions/upload-artifact digest to 89ef406 ([`b42b85a`](https://github.com/ShoGinn/X2WebHook/commit/b42b85aff38e0321953bab92f27b9b136d85043c))
+
 ## v0.0.12 (2024-08-02)
 
 ### Chore
