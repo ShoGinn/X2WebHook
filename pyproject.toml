@@ -10,7 +10,7 @@ version = "0.0.13"
 loguru = "0.7.2"
 pydantic = "2.9.2"
 pydantic-settings = "2.5.2"
-pymongo = { extras = ["srv"], version = "4.8.0" }
+pymongo = { extras = ["srv"], version = "4.9.1" }
 python = "^3.11, <3.13"
 requests = "2.32.3"
 twikit = "1.7.6"
