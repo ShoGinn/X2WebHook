@@ -1,5 +1,121 @@
 # CHANGELOG
 
+## v0.0.14 (2024-10-04)
+
+### Chore
+
+* chore(deps): update dependency ruff to v0.6.9 ([`2314613`](https://github.com/ShoGinn/X2WebHook/commit/23146135f3211fc9121b53f62681ca333f7d4c09))
+
+* chore(deps): update dependency python-semantic-release to v9.9.0 ([`20ab6ce`](https://github.com/ShoGinn/X2WebHook/commit/20ab6ce336591a024c723787cd2fde4613056fe8))
+
+* chore(deps): update dependency python-semantic-release to v9.8.9 ([`b0b3951`](https://github.com/ShoGinn/X2WebHook/commit/b0b3951f1c079329cc2fcd99bd4c137468256431))
+
+* chore(deps): update dependency ruff to v0.6.8 ([`84cffe4`](https://github.com/ShoGinn/X2WebHook/commit/84cffe47710ee195c5b687e89b1e426dbce45774))
+
+* chore(deps): update dependency poethepoet to v0.29.0 ([`477ae18`](https://github.com/ShoGinn/X2WebHook/commit/477ae18c4f356d36eb6dd753fc3704a4ff456b96))
+
+* chore(deps): update dependency ruff to v0.6.7 ([`960cf29`](https://github.com/ShoGinn/X2WebHook/commit/960cf299543e32ed5b053b80e57ff0d5a7472cca))
+
+* chore(deps): update dependency ruff to v0.6.6 ([`6914c29`](https://github.com/ShoGinn/X2WebHook/commit/6914c29506a309f5628744d0ac41eeafb4feaf46))
+
+* chore(deps): update dependency types-requests to v2.32.0.20240914 ([`877238a`](https://github.com/ShoGinn/X2WebHook/commit/877238ae20f212c0d67c4cf730efcbdeb075d4e7))
+
+* chore(deps): update dependency ruff to v0.6.5 ([`f9e09d0`](https://github.com/ShoGinn/X2WebHook/commit/f9e09d040e7f6d491e57a1f7e7d2b54e32e351b3))
+
+* chore(deps): update dependency pytest to v8.3.3 ([`18040d7`](https://github.com/ShoGinn/X2WebHook/commit/18040d7fe6776b15634154e58b7e47b3c5850474))
+
+* chore(deps): update dependency types-requests to v2.32.0.20240907 ([`6fbf95e`](https://github.com/ShoGinn/X2WebHook/commit/6fbf95e252f1d50e6cb299329db5296ee07b185b))
+
+### Fix
+
+* fix(deps): update dependency pymongo to v4.10.1 ([`29cacdd`](https://github.com/ShoGinn/X2WebHook/commit/29cacdd4df07fae79d697f8d8e02ef9c5aeef9fe))
+
+* fix(deps): update dependency pymongo to v4.10.0 ([`82dfd3f`](https://github.com/ShoGinn/X2WebHook/commit/82dfd3ffef67e5dee1d3975d857cabae1ce2753a))
+
+* fix(deps): update dependency pymongo to v4.9.1 ([`f513483`](https://github.com/ShoGinn/X2WebHook/commit/f513483c4d3de74a5adfdfea2ce73644d7e0be3b))
+
+* fix(deps): update dependency pydantic to v2.9.2 ([`9f10398`](https://github.com/ShoGinn/X2WebHook/commit/9f10398ac3a1713de56e05e23fb25963b95c40dd))
+
+* fix(deps): update dependency pydantic-settings to v2.5.2 ([`d497226`](https://github.com/ShoGinn/X2WebHook/commit/d4972267a8ac357384af3359968e3aceb0dc4790))
+
+* fix(deps): update dependency pydantic-settings to v2.5.0 ([`6618f90`](https://github.com/ShoGinn/X2WebHook/commit/6618f902067482e85929bdfbf20aa59287bb8093))
+
+* fix(deps): update dependency pydantic to v2.9.1 ([`ef64620`](https://github.com/ShoGinn/X2WebHook/commit/ef646201b9b2ebb6e64e0407eb31c24a5fcfe70f))
+
+### Unknown
+
+* Merge pull request #78 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.9 ([`278c2b1`](https://github.com/ShoGinn/X2WebHook/commit/278c2b1c0404ad55f51e4295e8fd4ea7b4809057))
+
+* Merge pull request #77 from ShoGinn/renovate/pymongo-4.x
+
+fix(deps): update dependency pymongo to v4.10.1 ([`71f0d74`](https://github.com/ShoGinn/X2WebHook/commit/71f0d74ed83c05a24bc82a8e5de40a8e2aebacb5))
+
+* Merge pull request #76 from ShoGinn/renovate/pymongo-4.x
+
+fix(deps): update dependency pymongo to v4.10.0 ([`7a5992b`](https://github.com/ShoGinn/X2WebHook/commit/7a5992b40d4d0123e18c9c542c1dfcb576282b51))
+
+* Merge pull request #75 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.9.0 ([`6b4fa5f`](https://github.com/ShoGinn/X2WebHook/commit/6b4fa5f083f52d4ae4d6ca96c19dcd7c987d09cb))
+
+* Merge pull request #74 from ShoGinn/renovate/python-semantic-release-9.x
+
+chore(deps): update dependency python-semantic-release to v9.8.9 ([`3dfadaa`](https://github.com/ShoGinn/X2WebHook/commit/3dfadaa799368929cc47e6caa591bf8fbdac12f7))
+
+* Merge pull request #73 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.8 ([`d51de4d`](https://github.com/ShoGinn/X2WebHook/commit/d51de4db207e38942b848abaded66dab5c8d05e6))
+
+* Merge pull request #72 from ShoGinn/renovate/poethepoet-0.x
+
+chore(deps): update dependency poethepoet to v0.29.0 ([`dfec081`](https://github.com/ShoGinn/X2WebHook/commit/dfec081045fc91147896334582aec7499f20035e))
+
+* Merge pull request #71 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.7 ([`2d7387e`](https://github.com/ShoGinn/X2WebHook/commit/2d7387e4209bfa84e0e4b36215041f643b434f8f))
+
+* Merge pull request #70 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.6 ([`f742bed`](https://github.com/ShoGinn/X2WebHook/commit/f742bedccb96156e75cde0141c43def5a68b19cb))
+
+* Merge pull request #69 from ShoGinn/renovate/pymongo-4.x
+
+fix(deps): update dependency pymongo to v4.9.1 ([`bc035b2`](https://github.com/ShoGinn/X2WebHook/commit/bc035b2a45808664393b3c90f7e35e9bf327a9bc))
+
+* Merge pull request #68 from ShoGinn/renovate/pydantic-2.x
+
+fix(deps): update dependency pydantic to v2.9.2 ([`0376e13`](https://github.com/ShoGinn/X2WebHook/commit/0376e133c8f01801deca70a51a2a58e47f4ec5d2))
+
+* Merge pull request #67 from ShoGinn/renovate/types-requests-2.x
+
+chore(deps): update dependency types-requests to v2.32.0.20240914 ([`05afb13`](https://github.com/ShoGinn/X2WebHook/commit/05afb13f3e3d56167ae1ebf1e01a9d75c73e158c))
+
+* Merge pull request #66 from ShoGinn/renovate/ruff-0.x
+
+chore(deps): update dependency ruff to v0.6.5 ([`81c2ef8`](https://github.com/ShoGinn/X2WebHook/commit/81c2ef8ebc7ec215437872e74eb1a244c8726aa2))
+
+* Merge pull request #65 from ShoGinn/renovate/pydantic-settings-2.x
+
+fix(deps): update dependency pydantic-settings to v2.5.2 ([`0eb700b`](https://github.com/ShoGinn/X2WebHook/commit/0eb700b479ed3a37f3a9aa86d891c7bd506fcf82))
+
+* Merge pull request #64 from ShoGinn/renovate/pydantic-settings-2.x
+
+fix(deps): update dependency pydantic-settings to v2.5.0 ([`171e323`](https://github.com/ShoGinn/X2WebHook/commit/171e3233c23abd53bc15d88706b1a735b76889ca))
+
+* Merge pull request #63 from ShoGinn/renovate/pytest-8.x
+
+chore(deps): update dependency pytest to v8.3.3 ([`ad86260`](https://github.com/ShoGinn/X2WebHook/commit/ad862602847236d3f96525f0ec7a4f2dff6165ec))
+
+* Merge pull request #62 from ShoGinn/renovate/pydantic-2.x
+
+fix(deps): update dependency pydantic to v2.9.1 ([`fc46641`](https://github.com/ShoGinn/X2WebHook/commit/fc466413f829e7bbdef8d25345060f2d7a0d54b1))
+
+* Merge pull request #61 from ShoGinn/renovate/types-requests-2.x
+
+chore(deps): update dependency types-requests to v2.32.0.20240907 ([`4584d0b`](https://github.com/ShoGinn/X2WebHook/commit/4584d0bca7ec4e283929793ba66d6b312f770637))
+
 ## v0.0.13 (2024-09-06)
 
 ### Chore
