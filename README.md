@@ -1,3 +1,7 @@
+# Archived
+
+This has been archived due to lack of interest and the twikit being updated past what i'm willing to change this code to.
+
 # X2WebHook - X to Webhook
 
 A simple script that will check on a list of user's last tweets and send them to the specified webhook as simple text if there's a new one, on a configurable timer.
