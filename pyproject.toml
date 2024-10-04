@@ -26,7 +26,7 @@ pytest-mock = "3.14.0"
 pytest-xdist = "3.6.1"
 python-semantic-release = "9.9.0"
 responses = "0.25.3"
-ruff = "0.6.8"
+ruff = "0.6.9"
 types-requests = "2.32.0.20240914"
 
 [build-system]
